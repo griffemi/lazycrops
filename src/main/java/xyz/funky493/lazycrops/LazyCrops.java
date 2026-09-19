@@ -52,6 +52,19 @@ public class LazyCrops implements ModInitializer {
 	public static final GameRules.Key<GameRules.BooleanRule> LAZY_CROPS_NEED_LIGHT =
 			GameRuleRegistry.register("lazyCropsNeedLight", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
 
+	/**
+	 * When true, <em>all</em> vanilla farmland stops being destroyed: it can't be trampled by
+	 * anything landing on it, and it never dries out or reverts to dirt. This covers the two
+	 * ways a farm actually dies, so it needs no new block and no client update -- it is pure
+	 * server-side behaviour (see the FarmlandBlock mixin).
+	 * <p>
+	 * Farmland still reverts when a block is placed on top of it. That is a placement-validity
+	 * check rather than damage, and suppressing it would leave farmland stranded under solid
+	 * blocks.
+	 */
+	public static final GameRules.Key<GameRules.BooleanRule> INVINCIBLE_FARMLAND =
+			GameRuleRegistry.register("invincibleFarmland", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+
 	@Override
 	public void onInitialize() {
 
