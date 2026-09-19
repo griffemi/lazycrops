@@ -29,7 +29,8 @@
 			"xyz.funky493.lazycrops.gametest.MachineGameTests",
 			"xyz.funky493.lazycrops.gametest.FarmlandGameTests",
 			"xyz.funky493.lazycrops.gametest.LegacyIdGameTests",
-			"xyz.funky493.lazycrops.gametest.ShiftGrowGameTests"
+			"xyz.funky493.lazycrops.gametest.ShiftGrowGameTests",
+			"xyz.funky493.lazycrops.gametest.ChestLootGameTests"
 		]
 	},
 	"mixins": [

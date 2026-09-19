@@ -28,6 +28,7 @@ import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.cropblocks.SeedEssenceItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
+import xyz.funky493.lazycrops.loot.EssenceChestLoot;
 import xyz.funky493.lazycrops.machines.LazyBlockEntities;
 import xyz.funky493.lazycrops.machines.LazyScreenHandlers;
 import team.reborn.energy.api.EnergyStorage;
@@ -147,16 +148,11 @@ public class LazyCrops implements ModInitializer {
 		LOGGER.info("Registered crop blocks and seeds.");
 
 		LOGGER.info("Modifying loot tables...");
-		Set<Identifier> chestTables = Set.of(
-				LootTables.ABANDONED_MINESHAFT_CHEST,
-				LootTables.DESERT_PYRAMID_CHEST,
-				LootTables.JUNGLE_TEMPLE_CHEST
-		);
+		Set<Identifier> chestTables = Set.copyOf(EssenceChestLoot.TABLES);
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, supplier, setter) -> {
-			Identifier injectId = new Identifier(MODID, "inject/" + id.getPath());
 			if (chestTables.contains(id)) {
 				supplier.pool(LootPool.builder()
-						.with(LootTableEntry.builder(injectId))
+						.with(LootTableEntry.builder(EssenceChestLoot.injectId(id)))
 						.build()
 				);
 			}
