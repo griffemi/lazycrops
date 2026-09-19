@@ -6,7 +6,7 @@
       "item": "lazycrops:lazy_seeds"
     },
     "s": {
-      "item": "minecraft:tnt"
+      "item": "minecraft:spider_eye"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     "sss"
   ],
   "result": {
-    "item": "lazycrops:tnt_seeds"
+    "item": "lazycrops:spider_eye_seeds"
   },
   "show_notification": true
 }

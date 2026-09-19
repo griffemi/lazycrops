@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "lazycrops:item/tnt_seeds"
+    "layer0": "lazycrops:item/spider_eye_seeds"
   }
 }

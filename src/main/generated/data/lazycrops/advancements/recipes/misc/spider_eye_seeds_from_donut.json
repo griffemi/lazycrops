@@ -1,18 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gunpowder": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:gunpowder"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_lazy_seeds": {
       "conditions": {
         "items": [
@@ -25,9 +13,21 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_spider_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:spider_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "lazycrops:gunpowder_seeds_from_donut"
+        "recipe": "lazycrops:spider_eye_seeds_from_donut"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -35,13 +35,13 @@
   "requirements": [
     [
       "has_lazy_seeds",
-      "has_gunpowder",
+      "has_spider_eye",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "lazycrops:gunpowder_seeds_from_donut"
+      "lazycrops:spider_eye_seeds_from_donut"
     ]
   },
   "sends_telemetry_event": false

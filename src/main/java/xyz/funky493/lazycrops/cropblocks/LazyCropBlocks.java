@@ -68,7 +68,6 @@ public class LazyCropBlocks {
     new LazyEntityCropBlock("pig", 0, EntityType.PIG, Items.PORKCHOP),
     new LazyEntityCropBlock("chicken", 0, EntityType.CHICKEN, Items.CHICKEN),
     new LazyExperienceCropBlock("experience", 2),
-    new LazyTntCropBlock("tnt", 0),
 
     //#region Metals
     new LazyItemCropBlock("iron", Items.RAW_IRON, 1),
@@ -133,13 +132,15 @@ public class LazyCropBlocks {
     //#region Vanilla mob and misc drops
     new LazyItemCropBlock("bone", Items.BONE, 0),
     new LazyItemCropBlock("string", Items.STRING, 0),
+    new LazyItemCropBlock("spider_eye", Items.SPIDER_EYE, 0),
     new LazyItemCropBlock("feather", Items.FEATHER, 0),
     new LazyItemCropBlock("flint", Items.FLINT, 0),
     new LazyItemCropBlock("clay", Items.CLAY_BALL, 0),
     // White, because it is the one colour every other colour dyes from.
     new LazyItemCropBlock("wool", Items.WHITE_WOOL, 0),
     new LazyItemCropBlock("ink_sac", Items.INK_SAC, 0),
-    new LazyItemCropBlock("gunpowder", Items.GUNPOWDER, 1),
+    // Lazy tier: with the TNT crop gone this is the only homegrown explosive route.
+    new LazyItemCropBlock("gunpowder", Items.GUNPOWDER, 0),
     new LazyItemCropBlock("leather", Items.LEATHER, 0),
     new LazyItemCropBlock("magma_cream", Items.MAGMA_CREAM, 1),
     new LazyItemCropBlock("ghast_tear", Items.GHAST_TEAR, 1),

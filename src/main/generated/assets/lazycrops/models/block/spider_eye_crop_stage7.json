@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "lazycrops:block/tnt_crop_stage4"
+    "crop": "lazycrops:block/spider_eye_crop_stage7"
   }
 }

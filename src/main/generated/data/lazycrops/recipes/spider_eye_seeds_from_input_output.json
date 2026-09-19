@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "lazycrops:tnt_seeds"
+      "item": "lazycrops:spider_eye_seeds"
     }
   ],
   "result": {
-    "item": "minecraft:tnt"
+    "item": "minecraft:spider_eye"
   }
 }

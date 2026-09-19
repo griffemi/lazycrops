@@ -62,9 +62,11 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
 
         //#region Core items and other blocks
 
-        translationBuilder.add("item." + MODID + ".lazy_seeds", "Lazy Seeds");
-        translationBuilder.add("item." + MODID + ".lazier_seeds", "Lazier Seeds");
-        translationBuilder.add("item." + MODID + ".laziest_seeds", "Laziest Seeds");
+        // Display names only. The item IDs stay lazy/lazier/laziest_seeds so that stacks
+        // already in players' inventories on the live server survive the rename.
+        translationBuilder.add("item." + MODID + ".lazy_seeds", "Weak Seed Essence");
+        translationBuilder.add("item." + MODID + ".lazier_seeds", "Standard Seed Essence");
+        translationBuilder.add("item." + MODID + ".laziest_seeds", "Rich Seed Essence");
         translationBuilder.add("item." + MODID + ".wither_skull_shard", "Wither Skull Shard");
         translationBuilder.add("block." + MODID + ".invincible_farmland", "Invincible Farmland");
         translationBuilder.add("item." + MODID + ".invincible_farmland", "Invincible Farmland");
@@ -73,9 +75,9 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
 
         //#region Advancements
 
-        advancement(translationBuilder, "root", "Adeya's Resource Crops", "Obtain lazy seeds");
-        advancement(translationBuilder, "lazier_seeds", "Lazier Seeds", "Obtain lazier seeds to be more lazy");
-        advancement(translationBuilder, "laziest_seeds", "Laziest Seeds", "I am become lazy, the doer of nothing");
+        advancement(translationBuilder, "root", "Adeya's Resource Crops", "Obtain weak seed essence");
+        advancement(translationBuilder, "lazier_seeds", "Standard Seed Essence", "Refine standard seed essence to be more lazy");
+        advancement(translationBuilder, "laziest_seeds", "Rich Seed Essence", "I am become lazy, the doer of nothing");
 
         //#endregion
 
