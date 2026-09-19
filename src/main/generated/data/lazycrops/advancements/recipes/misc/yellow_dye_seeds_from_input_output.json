@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:yellow_dye_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_dye_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:yellow_dye_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yellow_dye_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:yellow_dye_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

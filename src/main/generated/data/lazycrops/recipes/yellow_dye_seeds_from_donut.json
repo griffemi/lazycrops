@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:lazy_seeds"
+    },
+    "s": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:yellow_dye_seeds"
+  },
+  "show_notification": true
+}

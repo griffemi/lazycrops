@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lazycrops:lime_dye_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lime_dye"
+  }
+}

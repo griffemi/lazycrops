@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_laziest_seeds": {
+    "has_lazier_seeds": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lazycrops:laziest_seeds"
+              "lazycrops:lazier_seeds"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_laziest_seeds",
+      "has_lazier_seeds",
       "has_ghast_tear",
       "has_the_recipe"
     ]

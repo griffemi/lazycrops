@@ -117,16 +117,16 @@ public class LazyCropBlocks {
     new LazyTagCropBlock("platinum", c("platinum_ingots"), 2),
     new LazyTagCropBlock("tungsten", c("tungsten_ingots"), 2),
     new LazyTagCropBlock("iridium", c("iridium_ingots"), 2),
-    new LazyTagCropBlock("fluix", c("fluix"), 2),
+    new LazyTagCropBlock("fluix", c("fluix"), 1),
     //#endregion
 
     //#region Vanilla ores
-    new LazyItemCropBlock("coal", Items.COAL, 1),
+    new LazyItemCropBlock("coal", Items.COAL, 0),
     new LazyItemCropBlock("redstone", Items.REDSTONE, 1),
     new LazyItemCropBlock("lapis", Items.LAPIS_LAZULI, 1),
     new LazyItemCropBlock("glowstone", Items.GLOWSTONE_DUST, 1),
     new LazyItemCropBlock("prismarine", Items.PRISMARINE_SHARD, 1),
-    new LazyItemCropBlock("amethyst", Items.AMETHYST_SHARD, 2),
+    new LazyItemCropBlock("amethyst", Items.AMETHYST_SHARD, 1),
     new LazyItemCropBlock("echo_shard", Items.ECHO_SHARD, 2),
     //#endregion
 
@@ -140,12 +140,35 @@ public class LazyCropBlocks {
     new LazyItemCropBlock("wool", Items.WHITE_WOOL, 0),
     new LazyItemCropBlock("ink_sac", Items.INK_SAC, 0),
     new LazyItemCropBlock("gunpowder", Items.GUNPOWDER, 1),
-    new LazyItemCropBlock("leather", Items.LEATHER, 1),
+    new LazyItemCropBlock("leather", Items.LEATHER, 0),
     new LazyItemCropBlock("magma_cream", Items.MAGMA_CREAM, 1),
-    new LazyItemCropBlock("ghast_tear", Items.GHAST_TEAR, 2),
+    new LazyItemCropBlock("ghast_tear", Items.GHAST_TEAR, 1),
     new LazyItemCropBlock("phantom_membrane", Items.PHANTOM_MEMBRANE, 2),
     new LazyItemCropBlock("shulker_shell", Items.SHULKER_SHELL, 2),
     new LazyItemCropBlock("wither_skull", LazyCoreItems.WITHER_SKULL_SHARD, 2),
+    //#endregion
+
+    //#region Dyes -- the whole palette, all at Lazy tier. A dye crop is a convenience,
+    // not a scarce resource: every colour is already reachable from flowers or a
+    // crafting combination, so gating any of them behind Lazier/Laziest would only make
+    // the set inconsistent. Blue dye undercuts the lapis crop a little, but only for dye
+    // supply -- dye doesn't craft back into lapis, so the lapis economy is untouched.
+    new LazyItemCropBlock("white_dye", Items.WHITE_DYE, 0),
+    new LazyItemCropBlock("light_gray_dye", Items.LIGHT_GRAY_DYE, 0),
+    new LazyItemCropBlock("gray_dye", Items.GRAY_DYE, 0),
+    new LazyItemCropBlock("black_dye", Items.BLACK_DYE, 0),
+    new LazyItemCropBlock("brown_dye", Items.BROWN_DYE, 0),
+    new LazyItemCropBlock("red_dye", Items.RED_DYE, 0),
+    new LazyItemCropBlock("orange_dye", Items.ORANGE_DYE, 0),
+    new LazyItemCropBlock("yellow_dye", Items.YELLOW_DYE, 0),
+    new LazyItemCropBlock("lime_dye", Items.LIME_DYE, 0),
+    new LazyItemCropBlock("green_dye", Items.GREEN_DYE, 0),
+    new LazyItemCropBlock("cyan_dye", Items.CYAN_DYE, 0),
+    new LazyItemCropBlock("light_blue_dye", Items.LIGHT_BLUE_DYE, 0),
+    new LazyItemCropBlock("blue_dye", Items.BLUE_DYE, 0),
+    new LazyItemCropBlock("purple_dye", Items.PURPLE_DYE, 0),
+    new LazyItemCropBlock("magenta_dye", Items.MAGENTA_DYE, 0),
+    new LazyItemCropBlock("pink_dye", Items.PINK_DYE, 0),
     //#endregion
 
     //#region More modded metals, by common tag

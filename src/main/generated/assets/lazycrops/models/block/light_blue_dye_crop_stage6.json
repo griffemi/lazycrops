@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "lazycrops:block/light_blue_dye_crop_stage6"
+  }
+}

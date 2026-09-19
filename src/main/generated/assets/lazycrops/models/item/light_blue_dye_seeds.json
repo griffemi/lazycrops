@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lazycrops:item/light_blue_dye_seeds"
+  }
+}

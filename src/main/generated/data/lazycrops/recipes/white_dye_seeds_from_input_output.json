@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lazycrops:white_dye_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:white_dye"
+  }
+}

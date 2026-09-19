@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lazier_seeds": {
+    "has_lazy_seeds": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lazycrops:lazier_seeds"
+              "lazycrops:lazy_seeds"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_lazier_seeds",
+      "has_lazy_seeds",
       "has_leather",
       "has_the_recipe"
     ]
