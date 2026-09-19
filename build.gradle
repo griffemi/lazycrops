@@ -124,20 +124,23 @@ sourceSets {
 	}
 }
 
+// These used to hardcode workingDir '../lazycrops', which assumed the checkout directory was
+// literally named "lazycrops" and sat next to Gradle's working directory. That breaks in a
+// git worktree, or under any other directory name. projectDir is what they meant.
 task runAssetgenClient(type:Exec) {
-	workingDir '../lazycrops'
+	workingDir projectDir
 
 	commandLine 'python3', 'scripts/GenerateAssets.py'
 }
 
 task addPythonDependencies(type:Exec) {
-	workingDir '../lazycrops'
+	workingDir projectDir
 
 	commandLine 'pip3', 'install', '-r', 'scripts/requirements.txt'
 }
 
 task upgradePip3(type:Exec) {
-	workingDir '../lazycrops'
+	workingDir projectDir
 
 	commandLine 'pip3', 'install', '--upgrade', 'pip'
 }
@@ -145,4 +148,7 @@ task upgradePip3(type:Exec) {
 runAssetgenClient.dependsOn(addPythonDependencies)
 runAssetgenClient.dependsOn(upgradePip3)
 
-runDatagenClient.dependsOn(runAssetgenClient)
+// Upstream had runDatagenClient.dependsOn(runAssetgenClient), which made data generation
+// impossible without a working Python environment (and ran `pip3 install` as a side effect of
+// building). Texture generation and data generation are independent; run `runAssetgenClient`
+// explicitly when textures actually need regenerating.
