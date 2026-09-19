@@ -19,6 +19,7 @@ public class DataGeneration implements DataGeneratorEntrypoint {
         pack.addProvider(RecipeGeneration::new);
         pack.addProvider(AdvancementGeneration::new);
         pack.addProvider(TagGeneration::new);
+        pack.addProvider(BlockTagGeneration::new);
         pack.addProvider(SeasonCropGeneration::new);
         addLangProviders(pack);
     }

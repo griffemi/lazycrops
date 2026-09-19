@@ -71,6 +71,23 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
         translationBuilder.add("block." + MODID + ".invincible_farmland", "Invincible Farmland");
         translationBuilder.add("item." + MODID + ".invincible_farmland", "Invincible Farmland");
 
+        translationBuilder.add("block." + MODID + ".harvester", "Harvester");
+        translationBuilder.add("item." + MODID + ".harvester", "Harvester");
+        translationBuilder.add("block." + MODID + ".essence_extractor", "Seed Essence Extractor");
+        translationBuilder.add("item." + MODID + ".essence_extractor", "Seed Essence Extractor");
+
+        translationBuilder.add("container." + MODID + ".harvester", "Harvester");
+        translationBuilder.add("container." + MODID + ".essence_extractor", "Seed Essence Extractor");
+
+        translationBuilder.add("gui." + MODID + ".radius", "%sx%s");
+        translationBuilder.add("gui." + MODID + ".radius.tooltip", "Harvest area. Always 3 blocks tall: this level, one above, one below.");
+        translationBuilder.add("gui." + MODID + ".energy", "%s / %s E");
+        translationBuilder.add("gui." + MODID + ".extract_chance", "Each seed has a 50% chance to yield essence.");
+        translationBuilder.add("gui." + MODID + ".status.idle", "Idle");
+        translationBuilder.add("gui." + MODID + ".status.working", "Working");
+        translationBuilder.add("gui." + MODID + ".status.no_power", "Out of power");
+        translationBuilder.add("gui." + MODID + ".status.full", "Inventory full");
+
         //#endregion
 
         //#region Advancements

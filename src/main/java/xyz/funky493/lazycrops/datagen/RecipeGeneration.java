@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.cropblocks.*;
 
+
 import java.util.function.Consumer;
 
 public class RecipeGeneration extends FabricRecipeProvider {
@@ -107,5 +108,27 @@ public class RecipeGeneration extends FabricRecipeProvider {
 
         // Eight shards make a skull, so a wither still costs 24 harvests.
         ring(exporter, LazyCoreItems.WITHER_SKULL_SHARD, Items.WITHER_SKELETON_SKULL, new Identifier("lazycrops", "wither_skeleton_skull_from_shards"));
+
+        // Machines. Neither shape fits the donut/ring helpers, which assume a uniform surround.
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, LazyBlocks.HARVESTER_ITEM)
+                .pattern("sss")
+                .pattern("imi")
+                .pattern("sss")
+                .input('s', Items.STONE_BRICKS)
+                .input('i', Items.IRON_INGOT)
+                .input('m', LazyCoreItems.LAZY_SEEDS)
+                .criterion(FabricRecipeProvider.hasItem(LazyCoreItems.LAZY_SEEDS), FabricRecipeProvider.conditionsFromItem(LazyCoreItems.LAZY_SEEDS))
+                .offerTo(exporter, new Identifier("lazycrops", "harvester"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, LazyBlocks.ESSENCE_EXTRACTOR_ITEM)
+                .pattern("bdb")
+                .pattern("bmb")
+                .pattern("brb")
+                .input('b', Items.POLISHED_BLACKSTONE_BRICKS)
+                .input('d', Items.DIAMOND)
+                .input('m', LazyCoreItems.LAZIEST_SEEDS)
+                .input('r', Items.REDSTONE)
+                .criterion(FabricRecipeProvider.hasItem(LazyCoreItems.LAZIEST_SEEDS), FabricRecipeProvider.conditionsFromItem(LazyCoreItems.LAZIEST_SEEDS))
+                .offerTo(exporter, new Identifier("lazycrops", "essence_extractor"));
     }
 }

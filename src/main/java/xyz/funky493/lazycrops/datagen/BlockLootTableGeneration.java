@@ -11,6 +11,7 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.TagEntry;
 import net.minecraft.predicate.StatePredicate;
 import xyz.funky493.lazycrops.LazyCrops;
+import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.cropblocks.*;
 
 public class BlockLootTableGeneration extends FabricBlockLootTableProvider {
@@ -52,6 +53,12 @@ public class BlockLootTableGeneration extends FabricBlockLootTableProvider {
             }
             LazyCrops.LOGGER.info("- Added loot table for " + crop.cropId + ".");
         }
+
+        // Mandatory, not optional: these blocks have their own loot table id in our namespace,
+        // and the provider validates strictly, so omitting them fails datagen outright.
+        // (Invincible farmland escapes this only because Settings.copy inherits vanilla's id.)
+        addDrop(LazyBlocks.HARVESTER);
+        addDrop(LazyBlocks.ESSENCE_EXTRACTOR);
 
         LazyCrops.LOGGER.info("Generated loot tables.");
     }

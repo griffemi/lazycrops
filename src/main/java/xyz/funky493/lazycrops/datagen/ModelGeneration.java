@@ -6,6 +6,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import xyz.funky493.lazycrops.LazyCrops;
+import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
@@ -22,6 +23,10 @@ public class ModelGeneration extends FabricModelProvider {
             blockStateModelGenerator.registerCrop(crop, crop.getAgeProperty(), 0, 1, 2, 3, 4, 5, 6, 7);
             LazyCrops.LOGGER.info("- Added block state model for " + crop.cropId + ".");
         }
+        // The machines are plain cubes; registerSimpleCubeAll emits the blockstate, the block
+        // model and the parented item model in one go.
+        blockStateModelGenerator.registerSimpleCubeAll(LazyBlocks.HARVESTER);
+        blockStateModelGenerator.registerSimpleCubeAll(LazyBlocks.ESSENCE_EXTRACTOR);
         LazyCrops.LOGGER.info("Generated block state models.");
     }
 

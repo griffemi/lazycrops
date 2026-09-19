@@ -28,6 +28,9 @@ import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
+import xyz.funky493.lazycrops.machines.LazyBlockEntities;
+import xyz.funky493.lazycrops.machines.LazyScreenHandlers;
+import team.reborn.energy.api.EnergyStorage;
 
 import java.util.Set;
 
@@ -83,6 +86,31 @@ public class LazyCrops implements ModInitializer {
 			content.add(LazyBlocks.INVINCIBLE_FARMLAND_ITEM);
 		});
 		LOGGER.info("Registered other blocks.");
+
+		LOGGER.info("Registering machines...");
+		// Order matters: blocks and their items first, then the block entity types that
+		// reference them, then the screen handlers, and only then the energy lookup -- which
+		// needs the block entity types to already exist.
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "harvester"), LazyBlocks.HARVESTER);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "harvester"), LazyBlocks.HARVESTER_ITEM);
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "essence_extractor"), LazyBlocks.ESSENCE_EXTRACTOR);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "essence_extractor"), LazyBlocks.ESSENCE_EXTRACTOR_ITEM);
+
+		Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MODID, "harvester"), LazyBlockEntities.HARVESTER);
+		Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MODID, "essence_extractor"), LazyBlockEntities.ESSENCE_EXTRACTOR);
+
+		Registry.register(Registries.SCREEN_HANDLER, new Identifier(MODID, "harvester"), LazyScreenHandlers.HARVESTER);
+		Registry.register(Registries.SCREEN_HANDLER, new Identifier(MODID, "essence_extractor"), LazyScreenHandlers.ESSENCE_EXTRACTOR);
+
+		// Accept power from any side.
+		EnergyStorage.SIDED.registerForBlockEntity((be, dir) -> be.energy, LazyBlockEntities.HARVESTER);
+		EnergyStorage.SIDED.registerForBlockEntity((be, dir) -> be.energy, LazyBlockEntities.ESSENCE_EXTRACTOR);
+
+		ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> {
+			content.add(LazyBlocks.HARVESTER_ITEM);
+			content.add(LazyBlocks.ESSENCE_EXTRACTOR_ITEM);
+		});
+		LOGGER.info("Registered machines.");
 
 		LOGGER.info("Registering core items...");
 		for (int i = 0; i < LazyCoreItems.ITEMS.size(); i++) {

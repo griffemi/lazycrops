@@ -16,6 +16,13 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+
+	// Team Reborn Energy lives here. settings.gradle already lists this maven, but only
+	// inside pluginManagement, which does not apply to dependency resolution.
+	maven {
+		name = 'Fabric'
+		url = 'https://maven.fabricmc.net/'
+	}
 }
 
 loom {
@@ -38,6 +45,11 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// Energy API for the machines. Deliberately NOT include(...)'d: TechReborn, Powah,
+	// Modern Dynamics and AE2 all already bundle this, so shipping a fifth copy is noise.
+	// fabric.mod.json declares the dependency so the loader fails loudly if it is absent.
+	modImplementation "teamreborn:energy:${project.energy_version}"
 
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
