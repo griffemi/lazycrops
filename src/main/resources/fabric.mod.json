@@ -24,6 +24,10 @@
 		],
 		"main": [
           "xyz.funky493.lazycrops.LazyCrops"
+		],
+		"fabric-gametest": [
+			"xyz.funky493.lazycrops.gametest.MachineGameTests",
+			"xyz.funky493.lazycrops.gametest.FarmlandGameTests"
 		]
 	},
 	"mixins": [

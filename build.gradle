@@ -120,6 +120,19 @@ loom {
 
 			runDir "build/datagen"
 		}
+
+		//
+		// Headless in-world tests: "gradlew runGametest". Boots a dedicated server, builds each
+		// test's blocks in an empty 8x8x8 structure, asserts, and exits non-zero on failure.
+		//
+		gametest {
+			inherit server
+			name "Game Test"
+			vmArg "-Dfabric-api.gametest"
+			vmArg "-Dfabric-api.gametest.report-file=${file("build/gametest/report.xml")}"
+
+			runDir "build/gametest"
+		}
 	}
 }
 
