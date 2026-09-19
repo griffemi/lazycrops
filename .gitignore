@@ -45,4 +45,3 @@ replay_*.log
 /logs/
 .cache
 local.properties
-local.properties
