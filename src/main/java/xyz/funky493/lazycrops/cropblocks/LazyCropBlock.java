@@ -8,7 +8,9 @@ import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.property.IntProperty;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -55,6 +57,32 @@ public class LazyCropBlock extends CropBlock {
     }
     public int getLevel() {
         return level;
+    }
+
+    /**
+     * Vanilla CropBlock#randomTick refuses to grow unless getBaseLightLevel(pos, 0) >= 9.
+     * These are magical resource crops, not wheat, and a sealed indoor farm is a perfectly
+     * reasonable place to put them -- so by default we run the same growth maths without the
+     * light gate. getAvailableMoisture and the 1/(25/f + 1) roll are unchanged, so growth
+     * speed and farmland hydration still matter exactly as much as they did.
+     */
+    @Override
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (world.getGameRules().getBoolean(LazyCrops.LAZY_CROPS_NEED_LIGHT)) {
+            // Opt back into vanilla: light requirement, and seasonal mods that inject into
+            // CropBlock#randomTick get to run.
+            super.randomTick(state, world, pos, random);
+            return;
+        }
+
+        int age = this.getAge(state);
+        if (age >= this.getMaxAge()) {
+            return;
+        }
+        float moisture = getAvailableMoisture(this, world, pos);
+        if (random.nextInt((int) (25.0F / moisture) + 1) == 0) {
+            world.setBlockState(pos, this.withAge(age + 1), Block.NOTIFY_LISTENERS);
+        }
     }
 
     @Override

@@ -38,7 +38,19 @@ public class LazyCrops implements ModInitializer {
 	public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MODID, "main_group"));
 
 	public static final GameRules.Key<GameRules.BooleanRule> CAN_FERTILIZE_LAZYCROPS =
-			GameRuleRegistry.register("canFertilizeLazyCrops", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+			GameRuleRegistry.register("canFertilizeLazyCrops", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(true));
+
+	/**
+	 * When false (the default), lazy crops ignore vanilla's "sky/block light must be >= 9"
+	 * requirement and grow underground or in a sealed room. They also stop being scaled by
+	 * seasonal growth mods, because those hook CropBlock#randomTick and we no longer call it.
+	 * <p>
+	 * Set it to true to get stock vanilla behaviour back: the light gate returns, and seasonal
+	 * mods apply again (see the shipped data/lazycrops/seasons/crop configs, which keep winter
+	 * from being a hard stop in that case).
+	 */
+	public static final GameRules.Key<GameRules.BooleanRule> LAZY_CROPS_NEED_LIGHT =
+			GameRuleRegistry.register("lazyCropsNeedLight", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
 
 	@Override
 	public void onInitialize() {
