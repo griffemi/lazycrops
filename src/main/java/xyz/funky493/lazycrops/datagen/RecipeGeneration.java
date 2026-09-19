@@ -7,6 +7,7 @@ import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -59,6 +60,17 @@ public class RecipeGeneration extends FabricRecipeProvider {
                 .offerTo(exporter, recipeId);
     }
 
+    /** Eight around an empty centre, the chest/furnace shape. */
+    private void ring(Consumer<RecipeJsonProvider> exporter, Item fill, Item output, Identifier recipeId) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
+                .pattern("fff")
+                .pattern("f f")
+                .pattern("fff")
+                .input('f', fill)
+                .criterion(FabricRecipeProvider.hasItem(fill), FabricRecipeProvider.conditionsFromItem(fill))
+                .offerTo(exporter, recipeId);
+    }
+
     private void reverseThreeByThree(Consumer<RecipeJsonProvider> exporter, Item input, Item output, Identifier recipeId) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, 9)
                 .input(input)
@@ -92,5 +104,8 @@ public class RecipeGeneration extends FabricRecipeProvider {
         reverseThreeByThree(exporter, LazyCoreItems.LAZIEST_SEEDS, LazyCoreItems.LAZIER_SEEDS, new Identifier("lazycrops", "lazier_seeds_from_laziest_seeds"));
 
         threeByThree(exporter, Blocks.FARMLAND.asItem(), LazyBlocks.INVINCIBLE_FARMLAND_ITEM, new Identifier("lazycrops", "invincible_farmland_from_three_by_three"));
+
+        // Eight shards make a skull, so a wither still costs 24 harvests.
+        ring(exporter, LazyCoreItems.WITHER_SKULL_SHARD, Items.WITHER_SKELETON_SKULL, new Identifier("lazycrops", "wither_skeleton_skull_from_shards"));
     }
 }

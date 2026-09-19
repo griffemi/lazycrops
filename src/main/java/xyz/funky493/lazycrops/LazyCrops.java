@@ -82,6 +82,7 @@ public class LazyCrops implements ModInitializer {
 			content.add(LazyCoreItems.LAZY_SEEDS);
 			content.add(LazyCoreItems.LAZIER_SEEDS);
 			content.add(LazyCoreItems.LAZIEST_SEEDS);
+			content.add(LazyCoreItems.WITHER_SKULL_SHARD);
 		});
 		LOGGER.info("Registered core items.");
 

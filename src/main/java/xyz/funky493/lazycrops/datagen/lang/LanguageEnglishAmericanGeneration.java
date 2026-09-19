@@ -58,13 +58,14 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
             translationBuilder.add(cropBlock.seedsItem, snakeToTitle(cropBlock.seedsId));
         }
 
-        translationBuilder.add(LazyCrops.ITEM_GROUP, "Lazy Crops");
+        translationBuilder.add(LazyCrops.ITEM_GROUP, "Adeya's Resource Crops");
 
         //#region Core items and other blocks
 
         translationBuilder.add("item." + MODID + ".lazy_seeds", "Lazy Seeds");
         translationBuilder.add("item." + MODID + ".lazier_seeds", "Lazier Seeds");
         translationBuilder.add("item." + MODID + ".laziest_seeds", "Laziest Seeds");
+        translationBuilder.add("item." + MODID + ".wither_skull_shard", "Wither Skull Shard");
         translationBuilder.add("block." + MODID + ".invincible_farmland", "Invincible Farmland");
         translationBuilder.add("item." + MODID + ".invincible_farmland", "Invincible Farmland");
 
@@ -72,7 +73,7 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
 
         //#region Advancements
 
-        advancement(translationBuilder, "root", "Lazy Crops", "Obtain lazy seeds");
+        advancement(translationBuilder, "root", "Adeya's Resource Crops", "Obtain lazy seeds");
         advancement(translationBuilder, "lazier_seeds", "Lazier Seeds", "Obtain lazier seeds to be more lazy");
         advancement(translationBuilder, "laziest_seeds", "Laziest Seeds", "I am become lazy, the doer of nothing");
 

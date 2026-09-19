@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:lazy_seeds"
+    },
+    "s": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:wool_seeds"
+  },
+  "show_notification": true
+}

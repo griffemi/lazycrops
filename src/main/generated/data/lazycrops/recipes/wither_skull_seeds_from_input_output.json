@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lazycrops:wither_skull_seeds"
+    }
+  ],
+  "result": {
+    "item": "lazycrops:wither_skull_shard"
+  }
+}

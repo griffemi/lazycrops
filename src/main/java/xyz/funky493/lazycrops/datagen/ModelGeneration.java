@@ -31,6 +31,7 @@ public class ModelGeneration extends FabricModelProvider {
         itemModelGenerator.register(LazyCoreItems.LAZY_SEEDS, Models.GENERATED);
         itemModelGenerator.register(LazyCoreItems.LAZIER_SEEDS, Models.GENERATED);
         itemModelGenerator.register(LazyCoreItems.LAZIEST_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(LazyCoreItems.WITHER_SKULL_SHARD, Models.GENERATED);
         LazyCrops.LOGGER.info("Generated item models.");
     }
 }

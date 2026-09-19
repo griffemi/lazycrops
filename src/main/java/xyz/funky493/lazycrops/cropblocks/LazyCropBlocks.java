@@ -136,6 +136,8 @@ public class LazyCropBlocks {
     new LazyItemCropBlock("feather", Items.FEATHER, 0),
     new LazyItemCropBlock("flint", Items.FLINT, 0),
     new LazyItemCropBlock("clay", Items.CLAY_BALL, 0),
+    // White, because it is the one colour every other colour dyes from.
+    new LazyItemCropBlock("wool", Items.WHITE_WOOL, 0),
     new LazyItemCropBlock("ink_sac", Items.INK_SAC, 0),
     new LazyItemCropBlock("gunpowder", Items.GUNPOWDER, 1),
     new LazyItemCropBlock("leather", Items.LEATHER, 1),
@@ -143,6 +145,7 @@ public class LazyCropBlocks {
     new LazyItemCropBlock("ghast_tear", Items.GHAST_TEAR, 2),
     new LazyItemCropBlock("phantom_membrane", Items.PHANTOM_MEMBRANE, 2),
     new LazyItemCropBlock("shulker_shell", Items.SHULKER_SHELL, 2),
+    new LazyItemCropBlock("wither_skull", LazyCoreItems.WITHER_SKULL_SHARD, 2),
     //#endregion
 
     //#region More modded metals, by common tag

@@ -2,13 +2,15 @@
 	"schemaVersion": 1,
 	"id": "lazycrops",
 	"version": "${version}",
-	"name": "Lazy Crops",
-	"description": "Oh boy, I sure do hate working for my resources!",
+	"name": "Adeya's Resource Crops",
+	"description": "Grow your resources instead of mining them. A fork of funkychicken493's Lazy Crops.",
 	"authors": [
-		"funkychicken493"
+		"funkychicken493",
+		"griffemi"
 	],
 	"contact": {
-		"homepage": "https://github.com/funkychicken493/lazycrops"
+		"homepage": "https://github.com/griffemi/lazycrops",
+		"sources": "https://github.com/griffemi/lazycrops"
 	},
 	"license": "MIT",
 	"icon": "assets/lazycrops/icon.png",

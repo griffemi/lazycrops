@@ -4,7 +4,7 @@
   "advancements.lazycrops.laziest_seeds.description": "I am become lazy, the doer of nothing",
   "advancements.lazycrops.laziest_seeds.title": "Laziest Seeds",
   "advancements.lazycrops.root.description": "Obtain lazy seeds",
-  "advancements.lazycrops.root.title": "Lazy Crops",
+  "advancements.lazycrops.root.title": "Adeya's Resource Crops",
   "block.lazycrops.acacia_log_crop": "Acacia Log Crop",
   "block.lazycrops.aluminum_crop": "Aluminum Crop",
   "block.lazycrops.amber_crop": "Amber Crop",
@@ -95,6 +95,8 @@
   "block.lazycrops.uranium_crop": "Uranium Crop",
   "block.lazycrops.water_crop": "Water Crop",
   "block.lazycrops.wheat_seeds_crop": "Wheat Seeds Crop",
+  "block.lazycrops.wither_skull_crop": "Wither Skull Crop",
+  "block.lazycrops.wool_crop": "Wool Crop",
   "block.lazycrops.zinc_crop": "Zinc Crop",
   "gamerule.canFertilizeLazyCrops": "Can lazy crops be fertilized",
   "item.lazycrops.acacia_log_seeds": "Acacia Log Seeds",
@@ -190,6 +192,9 @@
   "item.lazycrops.uranium_seeds": "Uranium Seeds",
   "item.lazycrops.water_seeds": "Water Seeds",
   "item.lazycrops.wheat_seeds_seeds": "Wheat Seeds Seeds",
+  "item.lazycrops.wither_skull_seeds": "Wither Skull Seeds",
+  "item.lazycrops.wither_skull_shard": "Wither Skull Shard",
+  "item.lazycrops.wool_seeds": "Wool Seeds",
   "item.lazycrops.zinc_seeds": "Zinc Seeds",
-  "itemGroup.lazycrops.main_group": "Lazy Crops"
+  "itemGroup.lazycrops.main_group": "Adeya's Resource Crops"
 }
