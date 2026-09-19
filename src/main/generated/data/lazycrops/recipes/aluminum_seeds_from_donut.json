@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:lazier_seeds"
+    },
+    "s": {
+      "tag": "c:aluminum_ingots"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:aluminum_seeds"
+  },
+  "show_notification": true
+}

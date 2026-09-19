@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iridium_ingots": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:iridium_ingots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_laziest_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:laziest_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:iridium_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_laziest_seeds",
+      "has_iridium_ingots",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:iridium_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

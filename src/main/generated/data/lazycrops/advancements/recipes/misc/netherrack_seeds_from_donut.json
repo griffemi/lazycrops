@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lazy_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:lazy_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netherrack": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:netherrack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:netherrack_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lazy_seeds",
+      "has_netherrack",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:netherrack_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

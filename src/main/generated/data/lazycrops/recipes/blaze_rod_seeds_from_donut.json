@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:lazier_seeds"
+    },
+    "s": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:blaze_rod_seeds"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lazycrops:end_stone_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:end_stone"
+  }
+}

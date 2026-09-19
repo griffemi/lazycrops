@@ -8,6 +8,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.cropblocks.*;
@@ -28,6 +29,23 @@ public class RecipeGeneration extends FabricRecipeProvider {
                 .input('m', middle)
                 .criterion(FabricRecipeProvider.hasItem(middle), FabricRecipeProvider.conditionsFromItem(middle))
                 .criterion(FabricRecipeProvider.hasItem(surrounding), FabricRecipeProvider.conditionsFromItem(surrounding))
+                .offerTo(exporter, recipeId);
+    }
+
+    /**
+     * Donut whose surrounding ingredient is a tag rather than a concrete item, for crops
+     * bound to another mod's material. There is no matching reverse recipe: a recipe result
+     * must be a concrete item, and a tag cannot name one.
+     */
+    private void tagDonut(Consumer<RecipeJsonProvider> exporter, Item middle, TagKey<Item> surrounding, Item output, Identifier recipeId) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
+                .pattern("sss")
+                .pattern("sms")
+                .pattern("sss")
+                .input('s', surrounding)
+                .input('m', middle)
+                .criterion(FabricRecipeProvider.hasItem(middle), FabricRecipeProvider.conditionsFromItem(middle))
+                .criterion("has_" + surrounding.id().getPath(), FabricRecipeProvider.conditionsFromTag(surrounding))
                 .offerTo(exporter, recipeId);
     }
 
@@ -58,7 +76,9 @@ public class RecipeGeneration extends FabricRecipeProvider {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         for (LazyCropBlock cropBlock : LazyCropBlocks.CROP_BLOCKS) {
-            if (cropBlock instanceof LazyItemCropBlock) {
+            if (cropBlock instanceof LazyTagCropBlock) {
+                tagDonut(exporter, LazyCoreItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyTagCropBlock) cropBlock).productTag, cropBlock.seedsItem, new Identifier("lazycrops", cropBlock.seedsId + "_from_donut"));
+            } else if (cropBlock instanceof LazyItemCropBlock) {
                 donut(exporter, LazyCoreItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyItemCropBlock) cropBlock).product, cropBlock.seedsItem, new Identifier("lazycrops", cropBlock.seedsId + "_from_donut"));
                 inputOutput(exporter, cropBlock.seedsItem, ((LazyItemCropBlock) cropBlock).product, new Identifier("lazycrops", cropBlock.seedsId + "_from_input_output"));
             } else if (cropBlock instanceof LazyEntityCropBlock) {

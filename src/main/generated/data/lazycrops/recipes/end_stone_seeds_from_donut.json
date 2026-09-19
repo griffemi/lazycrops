@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:lazier_seeds"
+    },
+    "s": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:end_stone_seeds"
+  },
+  "show_notification": true
+}

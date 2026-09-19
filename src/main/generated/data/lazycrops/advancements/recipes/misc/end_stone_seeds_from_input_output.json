@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_end_stone_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:end_stone_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:end_stone_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_end_stone_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:end_stone_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

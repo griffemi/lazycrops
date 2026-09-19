@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "lazycrops:block/slime_crop_stage0"
+  }
+}
