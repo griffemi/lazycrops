@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lazier_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:lazier_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_products/amber": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "lazycrops:products/amber"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:amber_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lazier_seeds",
+      "has_products/amber",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:amber_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

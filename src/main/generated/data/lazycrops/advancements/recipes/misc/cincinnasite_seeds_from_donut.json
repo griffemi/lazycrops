@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lazier_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:lazier_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_products/cincinnasite": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "lazycrops:products/cincinnasite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:cincinnasite_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lazier_seeds",
+      "has_products/cincinnasite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:cincinnasite_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

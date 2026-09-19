@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:lazier_seeds"
+    },
+    "s": {
+      "tag": "lazycrops:products/ironwood"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:ironwood_seeds"
+  },
+  "show_notification": true
+}

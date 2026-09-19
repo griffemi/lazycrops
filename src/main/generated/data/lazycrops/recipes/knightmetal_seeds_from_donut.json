@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "lazycrops:laziest_seeds"
+    },
+    "s": {
+      "tag": "lazycrops:products/knightmetal"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "lazycrops:knightmetal_seeds"
+  },
+  "show_notification": true
+}

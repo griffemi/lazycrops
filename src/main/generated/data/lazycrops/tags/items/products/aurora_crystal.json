@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "betterend:aurora_crystal",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "lazycrops:block/zinc_crop_stage3"
+  }
+}

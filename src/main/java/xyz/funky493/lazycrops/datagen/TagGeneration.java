@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import xyz.funky493.lazycrops.LazyCrops;
 import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
@@ -23,8 +24,20 @@ public class TagGeneration extends FabricTagProvider.ItemTagProvider {
         return TagKey.of(RegistryKeys.ITEM, new Identifier("c", path));
     }
 
+    private static TagKey<Item> ownKey(String name) {
+        return TagKey.of(RegistryKeys.ITEM, new Identifier(LazyCrops.MODID, "products/" + name));
+    }
+
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+        // One tag per modded product that has no common tag. addOptional writes
+        // "required": false, so the tag resolves to nothing rather than erroring when the
+        // providing mod is absent.
+        LazyCropBlocks.OPTIONAL_PRODUCTS.forEach((name, itemId) ->
+                getOrCreateTagBuilder(ownKey(name))
+                        .addOptional(new Identifier(itemId))
+                        .setReplace(false));
+
         getOrCreateTagBuilder(ezCKey("seeds")).add(LazyCoreItems.LAZY_SEEDS).add(LazyCoreItems.LAZIER_SEEDS).add(LazyCoreItems.LAZIEST_SEEDS).setReplace(false);
         for (LazyCropBlock cropBlock : LazyCropBlocks.CROP_BLOCKS) {
             getOrCreateTagBuilder(ezCKey("seeds")).add(cropBlock.seedsItem).setReplace(false);

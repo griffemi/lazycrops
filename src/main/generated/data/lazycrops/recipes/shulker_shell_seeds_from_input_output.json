@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lazycrops:shulker_shell_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:shulker_shell"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_laziest_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lazycrops:laziest_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_products/steeleaf": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "lazycrops:products/steeleaf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lazycrops:steeleaf_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_laziest_seeds",
+      "has_products/steeleaf",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lazycrops:steeleaf_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lazycrops:item/soul_crystal_seeds"
+  }
+}

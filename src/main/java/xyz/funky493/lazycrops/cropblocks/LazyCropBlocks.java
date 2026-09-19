@@ -6,6 +6,9 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import xyz.funky493.lazycrops.LazyCrops;
+
+import java.util.Map;
 
 public class LazyCropBlocks {
 
@@ -13,6 +16,33 @@ public class LazyCropBlocks {
     private static TagKey<Item> c(String path) {
         return TagKey.of(RegistryKeys.ITEM, new Identifier("c", path));
     }
+
+    /** One of our own product tags, e.g. lazycrops:products/fiery. */
+    private static TagKey<Item> own(String name) {
+        return TagKey.of(RegistryKeys.ITEM, new Identifier(LazyCrops.MODID, "products/" + name));
+    }
+
+    /**
+     * Modded products with no common tag to bind to.
+     * <p>
+     * We can't reference these as concrete Items: their mods aren't on the datagen
+     * classpath, and a generated loot table naming an absent item fails to parse on load.
+     * So TagGeneration emits a lazycrops:products/&lt;name&gt; tag per entry using
+     * addOptional, which writes {@code "required": false} -- the tag resolves to nothing
+     * when the mod is missing instead of erroring, and the crop still registers either way.
+     */
+    public static final Map<String, String> OPTIONAL_PRODUCTS = Map.ofEntries(
+            Map.entry("fiery", "twilightforest:fiery_ingot"),
+            Map.entry("knightmetal", "twilightforest:knightmetal_ingot"),
+            Map.entry("steeleaf", "twilightforest:steeleaf_ingot"),
+            Map.entry("ironwood", "twilightforest:ironwood_ingot"),
+            Map.entry("soul_crystal", "deeperdarker:soul_crystal"),
+            Map.entry("amber", "betterend:amber_gem"),
+            Map.entry("aurora_crystal", "betterend:aurora_crystal"),
+            Map.entry("smaragdant", "betterend:smaragdant_crystal"),
+            Map.entry("sulphur", "betterend:sulphur_crystal"),
+            Map.entry("cincinnasite", "betternether:cincinnasite_ingot"),
+            Map.entry("ambrosium", "aether:ambrosium_shard"));
 
     public static final LazyCropBlock[] CROP_BLOCKS = new LazyCropBlock[]{
     new LazyItemCropBlock("dirt", Items.DIRT, 0),
@@ -87,7 +117,54 @@ public class LazyCropBlocks {
     new LazyTagCropBlock("platinum", c("platinum_ingots"), 2),
     new LazyTagCropBlock("tungsten", c("tungsten_ingots"), 2),
     new LazyTagCropBlock("iridium", c("iridium_ingots"), 2),
-    new LazyTagCropBlock("fluix", c("fluix"), 2)
+    new LazyTagCropBlock("fluix", c("fluix"), 2),
+    //#endregion
+
+    //#region Vanilla ores
+    new LazyItemCropBlock("coal", Items.COAL, 1),
+    new LazyItemCropBlock("redstone", Items.REDSTONE, 1),
+    new LazyItemCropBlock("lapis", Items.LAPIS_LAZULI, 1),
+    new LazyItemCropBlock("glowstone", Items.GLOWSTONE_DUST, 1),
+    new LazyItemCropBlock("prismarine", Items.PRISMARINE_SHARD, 1),
+    new LazyItemCropBlock("amethyst", Items.AMETHYST_SHARD, 2),
+    new LazyItemCropBlock("echo_shard", Items.ECHO_SHARD, 2),
+    //#endregion
+
+    //#region Vanilla mob and misc drops
+    new LazyItemCropBlock("bone", Items.BONE, 0),
+    new LazyItemCropBlock("string", Items.STRING, 0),
+    new LazyItemCropBlock("feather", Items.FEATHER, 0),
+    new LazyItemCropBlock("flint", Items.FLINT, 0),
+    new LazyItemCropBlock("clay", Items.CLAY_BALL, 0),
+    new LazyItemCropBlock("ink_sac", Items.INK_SAC, 0),
+    new LazyItemCropBlock("gunpowder", Items.GUNPOWDER, 1),
+    new LazyItemCropBlock("leather", Items.LEATHER, 1),
+    new LazyItemCropBlock("magma_cream", Items.MAGMA_CREAM, 1),
+    new LazyItemCropBlock("ghast_tear", Items.GHAST_TEAR, 2),
+    new LazyItemCropBlock("phantom_membrane", Items.PHANTOM_MEMBRANE, 2),
+    new LazyItemCropBlock("shulker_shell", Items.SHULKER_SHELL, 2),
+    //#endregion
+
+    //#region More modded metals, by common tag
+    new LazyTagCropBlock("zinc", c("zinc_ingots"), 1),
+    new LazyTagCropBlock("titanium", c("titanium_ingots"), 2),
+    new LazyTagCropBlock("chrome", c("chromium_ingots"), 2),
+    new LazyTagCropBlock("uranium", c("raw_uraninite_ores"), 2),
+    new LazyTagCropBlock("sky_steel", c("sky_steel_ingots"), 2),
+    //#endregion
+
+    //#region Modded materials with no common tag -- bound to our own optional tags
+    new LazyTagCropBlock("ironwood", own("ironwood"), 1),
+    new LazyTagCropBlock("ambrosium", own("ambrosium"), 1),
+    new LazyTagCropBlock("cincinnasite", own("cincinnasite"), 1),
+    new LazyTagCropBlock("amber", own("amber"), 1),
+    new LazyTagCropBlock("sulphur", own("sulphur"), 1),
+    new LazyTagCropBlock("knightmetal", own("knightmetal"), 2),
+    new LazyTagCropBlock("steeleaf", own("steeleaf"), 2),
+    new LazyTagCropBlock("fiery", own("fiery"), 2),
+    new LazyTagCropBlock("soul_crystal", own("soul_crystal"), 2),
+    new LazyTagCropBlock("aurora_crystal", own("aurora_crystal"), 2),
+    new LazyTagCropBlock("smaragdant", own("smaragdant"), 2)
     //#endregion
     };
 

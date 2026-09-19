@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "betterend:amber_gem",
+      "required": false
+    }
+  ]
+}
