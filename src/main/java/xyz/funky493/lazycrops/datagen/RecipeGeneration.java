@@ -61,17 +61,6 @@ public class RecipeGeneration extends FabricRecipeProvider {
                 .offerTo(exporter, recipeId);
     }
 
-    /** Eight around an empty centre, the chest/furnace shape. */
-    private void ring(Consumer<RecipeJsonProvider> exporter, Item fill, Item output, Identifier recipeId) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
-                .pattern("fff")
-                .pattern("f f")
-                .pattern("fff")
-                .input('f', fill)
-                .criterion(FabricRecipeProvider.hasItem(fill), FabricRecipeProvider.conditionsFromItem(fill))
-                .offerTo(exporter, recipeId);
-    }
-
     private void reverseThreeByThree(Consumer<RecipeJsonProvider> exporter, Item input, Item output, Identifier recipeId) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, 9)
                 .input(input)
@@ -106,8 +95,9 @@ public class RecipeGeneration extends FabricRecipeProvider {
 
         threeByThree(exporter, Blocks.FARMLAND.asItem(), LazyBlocks.INVINCIBLE_FARMLAND_ITEM, new Identifier("resourcecrops", "invincible_farmland_from_three_by_three"));
 
-        // Eight shards make a skull, so a wither still costs 24 harvests.
-        ring(exporter, SeedEssenceItems.WITHER_SKULL_SHARD, Items.WITHER_SKELETON_SKULL, new Identifier("resourcecrops", "wither_skeleton_skull_from_shards"));
+        // Eight shards round a weak essence make a skull, so a wither still costs 24 harvests
+        // plus the essence the player could otherwise have spent on another seed.
+        donut(exporter, SeedEssenceItems.WEAK_SEED_ESSENCE, SeedEssenceItems.WITHER_SKULL_SHARD, Items.WITHER_SKELETON_SKULL, new Identifier("resourcecrops", "wither_skeleton_skull_from_shards"));
 
         // Machines. Neither shape fits the donut/ring helpers, which assume a uniform surround.
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, LazyBlocks.HARVESTER_ITEM)

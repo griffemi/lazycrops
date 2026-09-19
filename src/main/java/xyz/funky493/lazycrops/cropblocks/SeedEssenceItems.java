@@ -12,8 +12,8 @@ public class SeedEssenceItems {
 
     /**
      * What the wither skull crop drops. The crop deliberately does not drop whole skulls:
-     * eight shards ring-craft into one, so summoning a wither still costs 24 harvests. It removes
-     * the tedium of farming wither skeletons without removing the boss fight.
+     * eight shards around a weak essence craft into one, so summoning a wither still costs 24
+     * harvests. It removes the tedium of farming wither skeletons without removing the boss fight.
      */
     public static final Item WITHER_SKULL_SHARD = new Item(new Item.Settings());
 

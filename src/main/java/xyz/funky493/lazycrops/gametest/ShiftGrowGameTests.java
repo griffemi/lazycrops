@@ -7,6 +7,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.test.GameTest;
 import net.minecraft.test.TestContext;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import xyz.funky493.lazycrops.LazyCrops;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
@@ -30,9 +31,21 @@ public class ShiftGrowGameTests implements FabricGameTest {
         return crop.getAge(context.getBlockState(pos));
     }
 
-    /** Off by default: sneak-right-click does nothing unless the rule is explicitly enabled. */
+    /**
+     * The rule ships off. Checked against a fresh GameRules rather than the test world, whose
+     * rules the other tests here mutate and never restore.
+     */
     @GameTest(templateName = EMPTY_STRUCTURE, tickLimit = 200)
-    public void shiftDoesNothingByDefault(TestContext context) {
+    public void defaultIsOff(TestContext context) {
+        context.assertTrue(!new GameRules().getBoolean(LazyCrops.GROW_CROPS_ON_SHIFT),
+                "growCropsOnShift should be registered with a default of false");
+        context.complete();
+    }
+
+    /** With the rule off, sneak-right-click leaves the crop alone. */
+    @GameTest(templateName = EMPTY_STRUCTURE, tickLimit = 200)
+    public void shiftDoesNothingWhenRuleOff(TestContext context) {
+        setRule(context, false);
         LazyCropBlock crop = anyCrop();
         context.setBlockState(CROP.down(), Blocks.FARMLAND);
         context.setBlockState(CROP, crop.withAge(0));
