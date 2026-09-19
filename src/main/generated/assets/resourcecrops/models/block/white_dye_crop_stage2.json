@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "resourcecrops:block/white_dye_crop_stage2"
+  }
+}

@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Emits per-crop growth multipliers for Fabric Seasons, at
- * {@code data/lazycrops/seasons/crop/<block path>.json}.
+ * {@code data/resourcecrops/seasons/crop/<block path>.json}.
  * <p>
  * Fabric Seasons looks up a config keyed by the crop's block id and falls back to its own
  * {@code seasons/hardcoded/crop/default.json} when there isn't one. That default is

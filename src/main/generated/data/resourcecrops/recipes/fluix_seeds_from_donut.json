@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:standard_seed_essence"
+    },
+    "s": {
+      "tag": "c:fluix"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:fluix_seeds"
+  },
+  "show_notification": true
+}

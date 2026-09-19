@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:weak_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:pink_dye_seeds"
+  },
+  "show_notification": true
+}

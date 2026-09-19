@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:mangrove_log_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:mangrove_log"
+  }
+}

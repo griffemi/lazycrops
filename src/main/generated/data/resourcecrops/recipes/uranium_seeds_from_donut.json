@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "s": {
+      "tag": "c:raw_uraninite_ores"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:uranium_seeds"
+  },
+  "show_notification": true
+}

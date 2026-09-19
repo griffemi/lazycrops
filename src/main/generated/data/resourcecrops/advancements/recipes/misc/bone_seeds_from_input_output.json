@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bone_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:bone_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:bone_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bone_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:bone_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

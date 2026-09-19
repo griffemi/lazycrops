@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "s": {
+      "tag": "resourcecrops:products/smaragdant"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:smaragdant_seeds"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "resourcecrops:block/iron_crop_stage3"
+  }
+}

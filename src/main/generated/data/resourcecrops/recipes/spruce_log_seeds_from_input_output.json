@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:spruce_log_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:spruce_log"
+  }
+}

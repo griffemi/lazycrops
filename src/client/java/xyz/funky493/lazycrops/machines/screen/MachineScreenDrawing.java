@@ -38,16 +38,16 @@ public final class MachineScreenDrawing {
     }
 
     public static Text energyTooltip(long energy, long capacity) {
-        return Text.translatable("gui.lazycrops.energy", energy, capacity);
+        return Text.translatable("gui.resourcecrops.energy", energy, capacity);
     }
 
     /** Status ordinals are shared by both machines; 0 (idle) renders no tooltip line. */
     public static Text statusText(int status) {
         return switch (status) {
-            case 1 -> Text.translatable("gui.lazycrops.status.working");
-            case 2 -> Text.translatable("gui.lazycrops.status.no_power");
-            case 3 -> Text.translatable("gui.lazycrops.status.full");
-            default -> Text.translatable("gui.lazycrops.status.idle");
+            case 1 -> Text.translatable("gui.resourcecrops.status.working");
+            case 2 -> Text.translatable("gui.resourcecrops.status.no_power");
+            case 3 -> Text.translatable("gui.resourcecrops.status.full");
+            default -> Text.translatable("gui.resourcecrops.status.idle");
         };
     }
 }

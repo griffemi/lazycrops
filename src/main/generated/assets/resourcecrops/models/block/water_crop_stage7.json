@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "resourcecrops:block/water_crop_stage7"
+  }
+}

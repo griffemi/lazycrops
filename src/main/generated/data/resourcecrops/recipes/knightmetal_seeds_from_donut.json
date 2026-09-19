@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "s": {
+      "tag": "resourcecrops:products/knightmetal"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:knightmetal_seeds"
+  },
+  "show_notification": true
+}

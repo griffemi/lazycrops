@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "resourcecrops:block/silver_crop_stage1"
+  }
+}

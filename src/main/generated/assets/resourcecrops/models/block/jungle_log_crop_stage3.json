@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "resourcecrops:block/jungle_log_crop_stage3"
+  }
+}

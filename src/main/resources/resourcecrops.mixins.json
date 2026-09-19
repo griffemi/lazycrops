@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "xyz.funky493.lazycrops.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "FarmlandBlockMixin",
+    "legacy.ItemStackLegacyIdMixin",
+    "legacy.BlockStateLegacyIdMixin",
+    "legacy.BlockEntityLegacyIdMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

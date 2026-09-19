@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:weak_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:gray_dye_seeds"
+  },
+  "show_notification": true
+}

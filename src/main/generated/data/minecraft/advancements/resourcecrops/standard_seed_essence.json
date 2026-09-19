@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:resourcecrops/root",
+  "criteria": {
+    "obtain_standard_seed_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:standard_seed_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.resourcecrops.standard_seed_essence.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "resourcecrops:standard_seed_essence"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.resourcecrops.standard_seed_essence.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_standard_seed_essence"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

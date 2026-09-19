@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:phantom_membrane_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:phantom_membrane"
+  }
+}

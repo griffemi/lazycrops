@@ -17,7 +17,7 @@ public class LazyCropBlocks {
         return TagKey.of(RegistryKeys.ITEM, new Identifier("c", path));
     }
 
-    /** One of our own product tags, e.g. lazycrops:products/fiery. */
+    /** One of our own product tags, e.g. resourcecrops:products/fiery. */
     private static TagKey<Item> own(String name) {
         return TagKey.of(RegistryKeys.ITEM, new Identifier(LazyCrops.MODID, "products/" + name));
     }
@@ -27,7 +27,7 @@ public class LazyCropBlocks {
      * <p>
      * We can't reference these as concrete Items: their mods aren't on the datagen
      * classpath, and a generated loot table naming an absent item fails to parse on load.
-     * So TagGeneration emits a lazycrops:products/&lt;name&gt; tag per entry using
+     * So TagGeneration emits a resourcecrops:products/&lt;name&gt; tag per entry using
      * addOptional, which writes {@code "required": false} -- the tag resolves to nothing
      * when the mod is missing instead of erroring, and the crop still registers either way.
      */
@@ -146,7 +146,7 @@ public class LazyCropBlocks {
     new LazyItemCropBlock("ghast_tear", Items.GHAST_TEAR, 1),
     new LazyItemCropBlock("phantom_membrane", Items.PHANTOM_MEMBRANE, 2),
     new LazyItemCropBlock("shulker_shell", Items.SHULKER_SHELL, 2),
-    new LazyItemCropBlock("wither_skull", LazyCoreItems.WITHER_SKULL_SHARD, 2),
+    new LazyItemCropBlock("wither_skull", SeedEssenceItems.WITHER_SKULL_SHARD, 2),
     //#endregion
 
     //#region Dyes -- the whole palette, all at Lazy tier. A dye crop is a convenience,

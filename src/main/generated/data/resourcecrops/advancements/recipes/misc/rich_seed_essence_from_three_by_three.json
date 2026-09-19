@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_standard_seed_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:standard_seed_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:rich_seed_essence_from_three_by_three"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_standard_seed_essence",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:rich_seed_essence_from_three_by_three"
+    ]
+  },
+  "sends_telemetry_event": false
+}

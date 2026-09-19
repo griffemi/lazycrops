@@ -212,7 +212,7 @@ public class HarvesterBlockEntity extends BlockEntity implements ImplementedInve
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("container.lazycrops.harvester");
+        return Text.translatable("container.resourcecrops.harvester");
     }
 
     @Override

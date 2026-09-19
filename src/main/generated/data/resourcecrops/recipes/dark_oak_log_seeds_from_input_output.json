@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:dark_oak_log_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dark_oak_log"
+  }
+}

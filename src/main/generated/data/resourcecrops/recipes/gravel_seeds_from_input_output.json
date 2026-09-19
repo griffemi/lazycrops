@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:gravel_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gravel"
+  }
+}

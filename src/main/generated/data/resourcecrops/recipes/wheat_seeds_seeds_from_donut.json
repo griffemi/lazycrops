@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:weak_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:wheat_seeds"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:wheat_seeds_seeds"
+  },
+  "show_notification": true
+}

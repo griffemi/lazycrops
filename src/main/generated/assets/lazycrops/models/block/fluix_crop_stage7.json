@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "lazycrops:block/fluix_crop_stage7"
-  }
-}

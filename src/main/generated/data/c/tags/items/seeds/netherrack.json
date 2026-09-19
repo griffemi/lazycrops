@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:netherrack_seeds"
+    "resourcecrops:netherrack_seeds"
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:deepslate_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:deepslate_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_deepslate_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:deepslate_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

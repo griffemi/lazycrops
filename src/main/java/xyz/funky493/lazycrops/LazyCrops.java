@@ -25,7 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.funky493.lazycrops.blocks.InvincibleFarmland;
 import xyz.funky493.lazycrops.blocks.LazyBlocks;
-import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
+import xyz.funky493.lazycrops.cropblocks.SeedEssenceItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
 import xyz.funky493.lazycrops.machines.LazyBlockEntities;
@@ -35,7 +35,7 @@ import team.reborn.energy.api.EnergyStorage;
 import java.util.Set;
 
 public class LazyCrops implements ModInitializer {
-	public static final String MODID = "lazycrops";
+	public static final String MODID = "resourcecrops";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
 	public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MODID, "main_group"));
@@ -49,7 +49,7 @@ public class LazyCrops implements ModInitializer {
 	 * seasonal growth mods, because those hook CropBlock#randomTick and we no longer call it.
 	 * <p>
 	 * Set it to true to get stock vanilla behaviour back: the light gate returns, and seasonal
-	 * mods apply again (see the shipped data/lazycrops/seasons/crop configs, which keep winter
+	 * mods apply again (see the shipped data/resourcecrops/seasons/crop configs, which keep winter
 	 * from being a hard stop in that case).
 	 */
 	public static final GameRules.Key<GameRules.BooleanRule> LAZY_CROPS_NEED_LIGHT =
@@ -75,7 +75,7 @@ public class LazyCrops implements ModInitializer {
 
 		Registry.register(Registries.ITEM_GROUP, ITEM_GROUP, FabricItemGroup.builder()
 				.displayName(Text.translatable("itemGroup." + MODID + ".main_group"))
-				.icon(() -> new ItemStack(LazyCoreItems.LAZY_SEEDS))
+				.icon(() -> new ItemStack(SeedEssenceItems.WEAK_SEED_ESSENCE))
 				.build()
 		);
 
@@ -113,17 +113,17 @@ public class LazyCrops implements ModInitializer {
 		LOGGER.info("Registered machines.");
 
 		LOGGER.info("Registering core items...");
-		for (int i = 0; i < LazyCoreItems.ITEMS.size(); i++) {
-			Item item = LazyCoreItems.ITEMS.keySet().toArray(new Item[0])[i];
-			String itemId = LazyCoreItems.ITEMS.values().toArray(new String[0])[i];
+		for (int i = 0; i < SeedEssenceItems.ITEMS.size(); i++) {
+			Item item = SeedEssenceItems.ITEMS.keySet().toArray(new Item[0])[i];
+			String itemId = SeedEssenceItems.ITEMS.values().toArray(new String[0])[i];
 			Registry.register(Registries.ITEM, new Identifier(MODID, itemId), item);
 			LOGGER.info("- Registered " + itemId + ".");
 		}
 		ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> {
-			content.add(LazyCoreItems.LAZY_SEEDS);
-			content.add(LazyCoreItems.LAZIER_SEEDS);
-			content.add(LazyCoreItems.LAZIEST_SEEDS);
-			content.add(LazyCoreItems.WITHER_SKULL_SHARD);
+			content.add(SeedEssenceItems.WEAK_SEED_ESSENCE);
+			content.add(SeedEssenceItems.STANDARD_SEED_ESSENCE);
+			content.add(SeedEssenceItems.RICH_SEED_ESSENCE);
+			content.add(SeedEssenceItems.WITHER_SKULL_SHARD);
 		});
 		LOGGER.info("Registered core items.");
 

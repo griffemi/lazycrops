@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:birch_log_seeds"
+    "resourcecrops:birch_log_seeds"
   ]
 }

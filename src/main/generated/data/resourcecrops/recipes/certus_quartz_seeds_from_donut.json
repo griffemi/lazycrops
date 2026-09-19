@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:standard_seed_essence"
+    },
+    "s": {
+      "tag": "c:certus_quartz"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:certus_quartz_seeds"
+  },
+  "show_notification": true
+}

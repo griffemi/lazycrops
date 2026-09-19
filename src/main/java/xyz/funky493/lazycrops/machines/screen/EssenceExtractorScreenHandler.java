@@ -13,7 +13,7 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
 import xyz.funky493.lazycrops.blocks.LazyBlocks;
 import xyz.funky493.lazycrops.machines.EssenceExtractorBlockEntity;
-import xyz.funky493.lazycrops.machines.LazySeedUtil;
+import xyz.funky493.lazycrops.machines.ResourceCropSeedUtil;
 import xyz.funky493.lazycrops.machines.LazyScreenHandlers;
 
 public class EssenceExtractorScreenHandler extends ScreenHandler {
@@ -98,7 +98,7 @@ public class EssenceExtractorScreenHandler extends ScreenHandler {
             // Player -> inputs, but only for seeds. The output range is never a destination:
             // insertItem skips Slot#canInsert when merging into an existing stack, so aiming
             // at it would push items into output slots despite canInsert being false.
-            boolean moved = LazySeedUtil.isLazySeed(inSlot) && this.insertItem(inSlot, 0, INPUTS, false);
+            boolean moved = ResourceCropSeedUtil.isResourceCropSeed(inSlot) && this.insertItem(inSlot, 0, INPUTS, false);
             if (!moved) {
                 if (index < HOTBAR_START) {
                     if (!this.insertItem(inSlot, HOTBAR_START, TOTAL, false)) {

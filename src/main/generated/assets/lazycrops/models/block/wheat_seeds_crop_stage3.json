@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "lazycrops:block/wheat_seeds_crop_stage3"
-  }
-}

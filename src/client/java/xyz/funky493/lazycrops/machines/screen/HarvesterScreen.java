@@ -10,7 +10,7 @@ import xyz.funky493.lazycrops.machines.HarvesterBlockEntity;
 
 public class HarvesterScreen extends HandledScreen<HarvesterScreenHandler> {
 
-    private static final Identifier TEXTURE = new Identifier("lazycrops", "textures/gui/harvester.png");
+    private static final Identifier TEXTURE = new Identifier("resourcecrops", "textures/gui/harvester.png");
 
     private static final int ENERGY_X = 10;
     private static final int ENERGY_Y = 18;
@@ -31,14 +31,14 @@ public class HarvesterScreen extends HandledScreen<HarvesterScreenHandler> {
         super.init();
         this.radiusButton = ButtonWidget.builder(radiusLabel(), button -> cycleRadius())
                 .dimensions(this.x + BUTTON_X, this.y + BUTTON_Y, 24, 20)
-                .tooltip(net.minecraft.client.gui.tooltip.Tooltip.of(Text.translatable("gui.lazycrops.radius.tooltip")))
+                .tooltip(net.minecraft.client.gui.tooltip.Tooltip.of(Text.translatable("gui.resourcecrops.radius.tooltip")))
                 .build();
         this.addDrawableChild(this.radiusButton);
     }
 
     private Text radiusLabel() {
         int side = this.handler.getRadius() * 2 + 1;
-        return Text.translatable("gui.lazycrops.radius", side, side);
+        return Text.translatable("gui.resourcecrops.radius", side, side);
     }
 
     /**

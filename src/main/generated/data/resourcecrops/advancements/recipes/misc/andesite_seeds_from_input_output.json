@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_andesite_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:andesite_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:andesite_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_andesite_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:andesite_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

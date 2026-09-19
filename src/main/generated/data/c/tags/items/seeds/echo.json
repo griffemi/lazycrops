@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:echo_shard_seeds"
+    "resourcecrops:echo_shard_seeds"
   ]
 }

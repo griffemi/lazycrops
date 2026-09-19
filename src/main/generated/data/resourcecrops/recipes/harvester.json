@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "m": {
+      "item": "resourcecrops:weak_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "pattern": [
+    "sss",
+    "imi",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:harvester"
+  },
+  "show_notification": true
+}

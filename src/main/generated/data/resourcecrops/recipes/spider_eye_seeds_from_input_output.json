@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:spider_eye_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:spider_eye"
+  }
+}

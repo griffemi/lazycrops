@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:quartz_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:quartz"
+  }
+}

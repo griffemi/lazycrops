@@ -48,6 +48,34 @@ The upstream CurseForge/Modrinth publishing plugins were removed: they read toke
 `local.properties` at configure time, so the build failed outright without secrets present.
 `local.properties` is now untracked.
 
+### Namespace migration (lazycrops -> resourcecrops)
+
+The mod id changed from `lazycrops` to `resourcecrops` to match the "Adeya's Resource Crops"
+rebrand, and the old `LazyCoreItems`/`lazy_seeds` naming became `SeedEssenceItems`/
+`weak_seed_essence` (and friends) to match the in-game "Seed Essence" text. Both changes rename
+the ids Minecraft actually saves to disk, which would normally turn every placed crop, machine,
+and held seed on the live server into air or a vanished item the next time that chunk or
+inventory loaded.
+
+Three Mixins (`xyz.funky493.lazycrops.mixin.legacy`) close that gap by rewriting the old
+`lazycrops:*` ids to their `resourcecrops:*` equivalents the moment save data is read, before
+Minecraft resolves them against the registry:
+
+- `ItemStackLegacyIdMixin` on `ItemStack.fromNbt` — covers every item everywhere (inventories,
+  chests, item frames, dropped items, our own machine slots).
+- `BlockStateLegacyIdMixin` on `NbtHelper.toBlockState` — covers placed blocks in the chunk
+  palette.
+- `BlockEntityLegacyIdMixin` on `BlockEntity.createFromNbt` — covers the Harvester/Extractor
+  block entities.
+
+The map lives in `xyz.funky493.lazycrops.legacy.LegacyIds`, deliberately outside the
+`xyz.funky493.lazycrops.mixin` package tree -- Mixin reserves a config's declared package for
+`@Mixin` classes only and refuses to load a plain class from inside it. This is permanent, not a
+one-time migration script: old ids
+convert silently and immediately wherever they're touched, with no server downtime and no direct
+edits to region files, but a chunk nobody visits keeps its old ids (harmless) until someone does.
+Advancement progress and stats keyed by the old ids are not migrated and will reset.
+
 ### Build
 
-    ./gradlew build        # -> build/libs/lazycrops-<version>.jar
+    ./gradlew build        # -> build/libs/resourcecrops-<version>.jar

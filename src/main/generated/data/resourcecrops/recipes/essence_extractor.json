@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:polished_blackstone_bricks"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "m": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "bdb",
+    "bmb",
+    "brb"
+  ],
+  "result": {
+    "item": "resourcecrops:essence_extractor"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "resourcecrops:item/black_dye_seeds"
+  }
+}

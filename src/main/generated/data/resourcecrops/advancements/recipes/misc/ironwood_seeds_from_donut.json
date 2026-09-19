@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_products/ironwood": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "resourcecrops:products/ironwood"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_standard_seed_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:standard_seed_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:ironwood_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_standard_seed_essence",
+      "has_products/ironwood",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:ironwood_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

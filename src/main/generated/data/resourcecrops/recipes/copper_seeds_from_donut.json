@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:standard_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:raw_copper"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:copper_seeds"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:ink_sac_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ink_sac"
+  }
+}

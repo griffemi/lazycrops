@@ -10,7 +10,7 @@ import net.minecraft.test.GameTest;
 import net.minecraft.test.TestContext;
 import net.minecraft.util.math.BlockPos;
 import xyz.funky493.lazycrops.blocks.LazyBlocks;
-import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
+import xyz.funky493.lazycrops.cropblocks.SeedEssenceItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
 import xyz.funky493.lazycrops.machines.EssenceExtractorBlockEntity;
@@ -264,11 +264,11 @@ public class MachineGameTests implements FabricGameTest {
             EssenceExtractorBlockEntity.tick(context.getWorld(), be.getPos(), state, be);
         }
 
-        int rich = count(be, LazyCoreItems.LAZIEST_SEEDS, EssenceExtractorBlockEntity.INPUT_SLOTS,
+        int rich = count(be, SeedEssenceItems.RICH_SEED_ESSENCE, EssenceExtractorBlockEntity.INPUT_SLOTS,
                 EssenceExtractorBlockEntity.SLOT_COUNT);
-        int weak = count(be, LazyCoreItems.LAZY_SEEDS, EssenceExtractorBlockEntity.INPUT_SLOTS,
+        int weak = count(be, SeedEssenceItems.WEAK_SEED_ESSENCE, EssenceExtractorBlockEntity.INPUT_SLOTS,
                 EssenceExtractorBlockEntity.SLOT_COUNT);
-        int standard = count(be, LazyCoreItems.LAZIER_SEEDS, EssenceExtractorBlockEntity.INPUT_SLOTS,
+        int standard = count(be, SeedEssenceItems.STANDARD_SEED_ESSENCE, EssenceExtractorBlockEntity.INPUT_SLOTS,
                 EssenceExtractorBlockEntity.SLOT_COUNT);
 
         context.assertTrue(rich > 0, "A tier 2 seed should yield Rich Seed Essence");
@@ -301,7 +301,7 @@ public class MachineGameTests implements FabricGameTest {
 
         int remaining = count(be, dirt.seedsItem, 0, EssenceExtractorBlockEntity.INPUT_SLOTS);
         int consumed = startingSeeds - remaining;
-        int produced = count(be, LazyCoreItems.LAZY_SEEDS, EssenceExtractorBlockEntity.INPUT_SLOTS,
+        int produced = count(be, SeedEssenceItems.WEAK_SEED_ESSENCE, EssenceExtractorBlockEntity.INPUT_SLOTS,
                 EssenceExtractorBlockEntity.SLOT_COUNT);
 
         context.assertTrue(consumed == attempts,
@@ -320,7 +320,7 @@ public class MachineGameTests implements FabricGameTest {
         EssenceExtractorBlockEntity be = placeExtractor(context, EssenceExtractorBlockEntity.CAPACITY);
         be.getItems().set(0, new ItemStack(dirt.seedsItem, 64));
         for (int i = EssenceExtractorBlockEntity.INPUT_SLOTS; i < EssenceExtractorBlockEntity.SLOT_COUNT; i++) {
-            be.getItems().set(i, new ItemStack(LazyCoreItems.LAZY_SEEDS, 64));
+            be.getItems().set(i, new ItemStack(SeedEssenceItems.WEAK_SEED_ESSENCE, 64));
         }
 
         BlockState state = context.getWorld().getBlockState(be.getPos());
@@ -360,7 +360,7 @@ public class MachineGameTests implements FabricGameTest {
                 "Seeds should be accepted in the input");
         context.assertFalse(be.canInsert(0, new ItemStack(Items.COBBLESTONE), null),
                 "Non-seeds must be rejected");
-        context.assertFalse(be.canInsert(0, new ItemStack(LazyCoreItems.LAZY_SEEDS), null),
+        context.assertFalse(be.canInsert(0, new ItemStack(SeedEssenceItems.WEAK_SEED_ESSENCE), null),
                 "Essence must not be feedable back into the extractor");
         context.assertFalse(be.canInsert(EssenceExtractorBlockEntity.INPUT_SLOTS, new ItemStack(dirt.seedsItem), null),
                 "Output slots must refuse inserts");

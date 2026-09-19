@@ -87,7 +87,7 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements Implemen
 
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
-        return slot < INPUT_SLOTS && LazySeedUtil.isLazySeed(stack);
+        return slot < INPUT_SLOTS && ResourceCropSeedUtil.isResourceCropSeed(stack);
     }
 
     @Override
@@ -97,7 +97,7 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements Implemen
 
     @Override
     public boolean isValid(int slot, ItemStack stack) {
-        return slot < INPUT_SLOTS && LazySeedUtil.isLazySeed(stack);
+        return slot < INPUT_SLOTS && ResourceCropSeedUtil.isResourceCropSeed(stack);
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, EssenceExtractorBlockEntity be) {
@@ -134,7 +134,7 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements Implemen
         }
 
         be.progress = 0;
-        Item essence = LazySeedUtil.essenceFor(input);
+        Item essence = ResourceCropSeedUtil.essenceFor(input);
         // The seed is consumed whether or not the extraction takes.
         be.removeStack(slot, 1);
         if (essence != null && world.getRandom().nextBoolean()) {
@@ -152,7 +152,7 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements Implemen
     private int findWorkableInput() {
         for (int i = 0; i < INPUT_SLOTS; i++) {
             ItemStack stack = getStack(i);
-            Item essence = LazySeedUtil.essenceFor(stack);
+            Item essence = ResourceCropSeedUtil.essenceFor(stack);
             if (essence == null) {
                 continue;
             }
@@ -183,7 +183,7 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements Implemen
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("container.lazycrops.essence_extractor");
+        return Text.translatable("container.resourcecrops.essence_extractor");
     }
 
     @Override

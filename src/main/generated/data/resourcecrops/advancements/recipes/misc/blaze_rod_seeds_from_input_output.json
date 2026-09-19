@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blaze_rod_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:blaze_rod_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:blaze_rod_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blaze_rod_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:blaze_rod_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

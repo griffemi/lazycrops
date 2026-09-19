@@ -9,7 +9,7 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
-import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
+import xyz.funky493.lazycrops.cropblocks.SeedEssenceItems;
 
 import java.util.function.BiConsumer;
 
@@ -20,11 +20,11 @@ public class ChestLootTableGeneration extends SimpleFabricLootTableProvider {
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
-        exporter.accept(new Identifier("lazycrops", "inject/chests/desert_pyramid"), LootTable.builder()
+        exporter.accept(new Identifier("resourcecrops", "inject/chests/desert_pyramid"), LootTable.builder()
                 .pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0f))
-                        .with(ItemEntry.builder(LazyCoreItems.LAZY_SEEDS).conditionally(RandomChanceLootCondition.builder(0.3f)))
-                        .with(ItemEntry.builder(LazyCoreItems.LAZIER_SEEDS).conditionally(RandomChanceLootCondition.builder(0.05f)))
-                        .with(ItemEntry.builder(LazyCoreItems.LAZIEST_SEEDS).conditionally(RandomChanceLootCondition.builder(0.01f)))
+                        .with(ItemEntry.builder(SeedEssenceItems.WEAK_SEED_ESSENCE).conditionally(RandomChanceLootCondition.builder(0.3f)))
+                        .with(ItemEntry.builder(SeedEssenceItems.STANDARD_SEED_ESSENCE).conditionally(RandomChanceLootCondition.builder(0.05f)))
+                        .with(ItemEntry.builder(SeedEssenceItems.RICH_SEED_ESSENCE).conditionally(RandomChanceLootCondition.builder(0.01f)))
                 )
         );
     }

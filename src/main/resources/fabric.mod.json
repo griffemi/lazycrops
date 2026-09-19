@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "lazycrops",
+	"id": "resourcecrops",
 	"version": "${version}",
 	"name": "Adeya's Resource Crops",
 	"description": "Grow your resources instead of mining them. A fork of funkychicken493's Lazy Crops.",
@@ -13,7 +13,7 @@
 		"sources": "https://github.com/griffemi/lazycrops"
 	},
 	"license": "MIT",
-	"icon": "assets/lazycrops/icon.png",
+	"icon": "assets/resourcecrops/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"fabric-datagen": [
@@ -27,11 +27,12 @@
 		],
 		"fabric-gametest": [
 			"xyz.funky493.lazycrops.gametest.MachineGameTests",
-			"xyz.funky493.lazycrops.gametest.FarmlandGameTests"
+			"xyz.funky493.lazycrops.gametest.FarmlandGameTests",
+			"xyz.funky493.lazycrops.gametest.LegacyIdGameTests"
 		]
 	},
 	"mixins": [
-		"lazycrops.mixins.json"
+		"resourcecrops.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",

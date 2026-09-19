@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:cow_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:beef"
+  }
+}

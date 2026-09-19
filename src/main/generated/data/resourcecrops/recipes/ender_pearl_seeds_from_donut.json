@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:ender_pearl_seeds"
+  },
+  "show_notification": true
+}

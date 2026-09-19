@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "s": {
+      "item": "minecraft:echo_shard"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sms",
+    "sss"
+  ],
+  "result": {
+    "item": "resourcecrops:echo_shard_seeds"
+  },
+  "show_notification": true
+}

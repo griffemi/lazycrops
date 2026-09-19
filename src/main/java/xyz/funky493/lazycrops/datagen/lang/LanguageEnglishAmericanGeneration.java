@@ -17,7 +17,7 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
     public LanguageEnglishAmericanGeneration(FabricDataOutput dataOutput) {
         super(dataOutput, "en_us");
         try {
-            existingFilePath = dataOutput.getModContainer().findPath("assets/lazycrops/lang/existing/en_us.json").get();
+            existingFilePath = dataOutput.getModContainer().findPath("assets/resourcecrops/lang/existing/en_us.json").get();
         } catch (Exception e) {
             throw new RuntimeException("Failed to find existing language file!", e);
         }
@@ -62,11 +62,9 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
 
         //#region Core items and other blocks
 
-        // Display names only. The item IDs stay lazy/lazier/laziest_seeds so that stacks
-        // already in players' inventories on the live server survive the rename.
-        translationBuilder.add("item." + MODID + ".lazy_seeds", "Weak Seed Essence");
-        translationBuilder.add("item." + MODID + ".lazier_seeds", "Standard Seed Essence");
-        translationBuilder.add("item." + MODID + ".laziest_seeds", "Rich Seed Essence");
+        translationBuilder.add("item." + MODID + ".weak_seed_essence", "Weak Seed Essence");
+        translationBuilder.add("item." + MODID + ".standard_seed_essence", "Standard Seed Essence");
+        translationBuilder.add("item." + MODID + ".rich_seed_essence", "Rich Seed Essence");
         translationBuilder.add("item." + MODID + ".wither_skull_shard", "Wither Skull Shard");
         translationBuilder.add("block." + MODID + ".invincible_farmland", "Invincible Farmland");
         translationBuilder.add("item." + MODID + ".invincible_farmland", "Invincible Farmland");
@@ -93,8 +91,8 @@ public class LanguageEnglishAmericanGeneration extends FabricLanguageProvider {
         //#region Advancements
 
         advancement(translationBuilder, "root", "Adeya's Resource Crops", "Obtain weak seed essence");
-        advancement(translationBuilder, "lazier_seeds", "Standard Seed Essence", "Refine standard seed essence to be more lazy");
-        advancement(translationBuilder, "laziest_seeds", "Rich Seed Essence", "I am become lazy, the doer of nothing");
+        advancement(translationBuilder, "standard_seed_essence", "Standard Seed Essence", "Refine weak seed essence into standard");
+        advancement(translationBuilder, "rich_seed_essence", "Rich Seed Essence", "I am become lazy, the doer of nothing");
 
         //#endregion
 

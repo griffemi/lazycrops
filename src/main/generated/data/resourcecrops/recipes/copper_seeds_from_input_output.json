@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:copper_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:raw_copper"
+  }
+}

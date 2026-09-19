@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:standard_seed_essence"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "resourcecrops:weak_seed_essence"
+  }
+}

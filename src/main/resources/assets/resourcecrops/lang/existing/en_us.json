@@ -1,0 +1,5 @@
+{
+  "block.resourcecrops.tnt_crop": "TNT Crop",
+  "item.resourcecrops.tnt_seeds": "TNT Seeds",
+  "gamerule.canFertilizeLazyCrops": "Can lazy crops be fertilized"
+}

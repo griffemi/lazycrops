@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:glowstone_seeds"
+    "resourcecrops:glowstone_seeds"
   ]
 }

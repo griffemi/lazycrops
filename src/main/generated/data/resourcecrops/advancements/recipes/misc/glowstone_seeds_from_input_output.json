@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glowstone_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:glowstone_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:glowstone_seeds_from_input_output"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_glowstone_seeds",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:glowstone_seeds_from_input_output"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:resourcecrops/standard_seed_essence",
+  "criteria": {
+    "obtain_rich_seed_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:rich_seed_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.resourcecrops.rich_seed_essence.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "resourcecrops:rich_seed_essence"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.resourcecrops.rich_seed_essence.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_rich_seed_essence"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

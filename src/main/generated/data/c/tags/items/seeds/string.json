@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:string_seeds"
+    "resourcecrops:string_seeds"
   ]
 }

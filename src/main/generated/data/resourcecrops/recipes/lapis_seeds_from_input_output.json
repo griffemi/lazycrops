@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:lapis_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lapis_lazuli"
+  }
+}

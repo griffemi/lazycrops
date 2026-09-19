@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_experience_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:experience_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rich_seed_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:rich_seed_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resourcecrops:experience_seeds_from_donut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rich_seed_essence",
+      "has_experience_bottle",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resourcecrops:experience_seeds_from_donut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

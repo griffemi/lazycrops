@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:mangrove_log_seeds"
+    "resourcecrops:mangrove_log_seeds"
   ]
 }

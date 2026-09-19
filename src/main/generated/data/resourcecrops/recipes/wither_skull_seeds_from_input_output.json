@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:wither_skull_seeds"
+    }
+  ],
+  "result": {
+    "item": "resourcecrops:wither_skull_shard"
+  }
+}

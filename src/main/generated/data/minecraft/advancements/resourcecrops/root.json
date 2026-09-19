@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "obtain_weak_seed_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcecrops:weak_seed_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.resourcecrops.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "resourcecrops:weak_seed_essence"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.resourcecrops.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_weak_seed_essence"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

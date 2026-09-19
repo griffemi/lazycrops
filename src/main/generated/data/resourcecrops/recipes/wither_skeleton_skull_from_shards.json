@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "resourcecrops:wither_skull_shard"
+    }
+  },
+  "pattern": [
+    "fff",
+    "f f",
+    "fff"
+  ],
+  "result": {
+    "item": "minecraft:wither_skeleton_skull"
+  },
+  "show_notification": true
+}

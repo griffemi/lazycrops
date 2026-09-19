@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:quartz_seeds"
+    "resourcecrops:quartz_seeds"
   ]
 }

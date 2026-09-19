@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "lazycrops:item/spruce_log_seeds"
-  }
-}

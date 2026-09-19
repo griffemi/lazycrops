@@ -9,7 +9,7 @@ import xyz.funky493.lazycrops.machines.EssenceExtractorBlockEntity;
 
 public class EssenceExtractorScreen extends HandledScreen<EssenceExtractorScreenHandler> {
 
-    private static final Identifier TEXTURE = new Identifier("lazycrops", "textures/gui/essence_extractor.png");
+    private static final Identifier TEXTURE = new Identifier("resourcecrops", "textures/gui/essence_extractor.png");
 
     private static final int ENERGY_X = 9;
     private static final int ENERGY_Y = 18;
@@ -56,7 +56,7 @@ public class EssenceExtractorScreen extends HandledScreen<EssenceExtractorScreen
 
         if (MachineScreenDrawing.isOver(mouseX, mouseY, this.x + ARROW_X, this.y + ARROW_Y, ARROW_WIDTH, ARROW_HEIGHT)) {
             context.drawTooltip(this.textRenderer,
-                    java.util.List.of(Text.translatable("gui.lazycrops.extract_chance")),
+                    java.util.List.of(Text.translatable("gui.resourcecrops.extract_chance")),
                     mouseX, mouseY);
         }
 

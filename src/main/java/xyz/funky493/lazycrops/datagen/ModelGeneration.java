@@ -7,7 +7,7 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import xyz.funky493.lazycrops.LazyCrops;
 import xyz.funky493.lazycrops.blocks.LazyBlocks;
-import xyz.funky493.lazycrops.cropblocks.LazyCoreItems;
+import xyz.funky493.lazycrops.cropblocks.SeedEssenceItems;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlock;
 import xyz.funky493.lazycrops.cropblocks.LazyCropBlocks;
 
@@ -33,10 +33,10 @@ public class ModelGeneration extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         LazyCrops.LOGGER.info("Generating item models...");
-        itemModelGenerator.register(LazyCoreItems.LAZY_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(LazyCoreItems.LAZIER_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(LazyCoreItems.LAZIEST_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(LazyCoreItems.WITHER_SKULL_SHARD, Models.GENERATED);
+        itemModelGenerator.register(SeedEssenceItems.WEAK_SEED_ESSENCE, Models.GENERATED);
+        itemModelGenerator.register(SeedEssenceItems.STANDARD_SEED_ESSENCE, Models.GENERATED);
+        itemModelGenerator.register(SeedEssenceItems.RICH_SEED_ESSENCE, Models.GENERATED);
+        itemModelGenerator.register(SeedEssenceItems.WITHER_SKULL_SHARD, Models.GENERATED);
         LazyCrops.LOGGER.info("Generated item models.");
     }
 }

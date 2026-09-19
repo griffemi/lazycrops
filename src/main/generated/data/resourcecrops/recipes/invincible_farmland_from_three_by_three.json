@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "minecraft:farmland"
+    }
+  },
+  "pattern": [
+    "fff",
+    "fff",
+    "fff"
+  ],
+  "result": {
+    "item": "resourcecrops:invincible_farmland"
+  },
+  "show_notification": true
+}

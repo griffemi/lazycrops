@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "lazycrops:experience_seeds"
+    "resourcecrops:experience_seeds"
   ]
 }

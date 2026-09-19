@@ -90,24 +90,24 @@ public class RecipeGeneration extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         for (LazyCropBlock cropBlock : LazyCropBlocks.CROP_BLOCKS) {
             if (cropBlock instanceof LazyTagCropBlock) {
-                tagDonut(exporter, LazyCoreItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyTagCropBlock) cropBlock).productTag, cropBlock.seedsItem, new Identifier("lazycrops", cropBlock.seedsId + "_from_donut"));
+                tagDonut(exporter, SeedEssenceItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyTagCropBlock) cropBlock).productTag, cropBlock.seedsItem, new Identifier("resourcecrops", cropBlock.seedsId + "_from_donut"));
             } else if (cropBlock instanceof LazyItemCropBlock) {
-                donut(exporter, LazyCoreItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyItemCropBlock) cropBlock).product, cropBlock.seedsItem, new Identifier("lazycrops", cropBlock.seedsId + "_from_donut"));
-                inputOutput(exporter, cropBlock.seedsItem, ((LazyItemCropBlock) cropBlock).product, new Identifier("lazycrops", cropBlock.seedsId + "_from_input_output"));
+                donut(exporter, SeedEssenceItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyItemCropBlock) cropBlock).product, cropBlock.seedsItem, new Identifier("resourcecrops", cropBlock.seedsId + "_from_donut"));
+                inputOutput(exporter, cropBlock.seedsItem, ((LazyItemCropBlock) cropBlock).product, new Identifier("resourcecrops", cropBlock.seedsId + "_from_input_output"));
             } else if (cropBlock instanceof LazyEntityCropBlock) {
-                donut(exporter, LazyCoreItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyEntityCropBlock) cropBlock).craftItem, cropBlock.seedsItem, new Identifier("lazycrops", cropBlock.seedsId + "_from_donut"));
-                inputOutput(exporter, cropBlock.seedsItem, ((LazyEntityCropBlock) cropBlock).craftItem, new Identifier("lazycrops", cropBlock.seedsId + "_from_input_output"));
+                donut(exporter, SeedEssenceItems.getItemFromCropLevel(cropBlock.getLevel()), ((LazyEntityCropBlock) cropBlock).craftItem, cropBlock.seedsItem, new Identifier("resourcecrops", cropBlock.seedsId + "_from_donut"));
+                inputOutput(exporter, cropBlock.seedsItem, ((LazyEntityCropBlock) cropBlock).craftItem, new Identifier("resourcecrops", cropBlock.seedsId + "_from_input_output"));
             }
         }
-        threeByThree(exporter, LazyCoreItems.LAZY_SEEDS, LazyCoreItems.LAZIER_SEEDS, new Identifier("lazycrops", "lazier_seeds_from_three_by_three"));
-        reverseThreeByThree(exporter, LazyCoreItems.LAZIER_SEEDS, LazyCoreItems.LAZY_SEEDS, new Identifier("lazycrops", "lazy_seeds_from_lazier_seeds"));
-        threeByThree(exporter, LazyCoreItems.LAZIER_SEEDS, LazyCoreItems.LAZIEST_SEEDS, new Identifier("lazycrops", "laziest_seeds_from_three_by_three"));
-        reverseThreeByThree(exporter, LazyCoreItems.LAZIEST_SEEDS, LazyCoreItems.LAZIER_SEEDS, new Identifier("lazycrops", "lazier_seeds_from_laziest_seeds"));
+        threeByThree(exporter, SeedEssenceItems.WEAK_SEED_ESSENCE, SeedEssenceItems.STANDARD_SEED_ESSENCE, new Identifier("resourcecrops", "standard_seed_essence_from_three_by_three"));
+        reverseThreeByThree(exporter, SeedEssenceItems.STANDARD_SEED_ESSENCE, SeedEssenceItems.WEAK_SEED_ESSENCE, new Identifier("resourcecrops", "weak_seed_essence_from_standard_seed_essence"));
+        threeByThree(exporter, SeedEssenceItems.STANDARD_SEED_ESSENCE, SeedEssenceItems.RICH_SEED_ESSENCE, new Identifier("resourcecrops", "rich_seed_essence_from_three_by_three"));
+        reverseThreeByThree(exporter, SeedEssenceItems.RICH_SEED_ESSENCE, SeedEssenceItems.STANDARD_SEED_ESSENCE, new Identifier("resourcecrops", "standard_seed_essence_from_rich_seed_essence"));
 
-        threeByThree(exporter, Blocks.FARMLAND.asItem(), LazyBlocks.INVINCIBLE_FARMLAND_ITEM, new Identifier("lazycrops", "invincible_farmland_from_three_by_three"));
+        threeByThree(exporter, Blocks.FARMLAND.asItem(), LazyBlocks.INVINCIBLE_FARMLAND_ITEM, new Identifier("resourcecrops", "invincible_farmland_from_three_by_three"));
 
         // Eight shards make a skull, so a wither still costs 24 harvests.
-        ring(exporter, LazyCoreItems.WITHER_SKULL_SHARD, Items.WITHER_SKELETON_SKULL, new Identifier("lazycrops", "wither_skeleton_skull_from_shards"));
+        ring(exporter, SeedEssenceItems.WITHER_SKULL_SHARD, Items.WITHER_SKELETON_SKULL, new Identifier("resourcecrops", "wither_skeleton_skull_from_shards"));
 
         // Machines. Neither shape fits the donut/ring helpers, which assume a uniform surround.
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, LazyBlocks.HARVESTER_ITEM)
@@ -116,9 +116,9 @@ public class RecipeGeneration extends FabricRecipeProvider {
                 .pattern("sss")
                 .input('s', Items.STONE_BRICKS)
                 .input('i', Items.IRON_INGOT)
-                .input('m', LazyCoreItems.LAZY_SEEDS)
-                .criterion(FabricRecipeProvider.hasItem(LazyCoreItems.LAZY_SEEDS), FabricRecipeProvider.conditionsFromItem(LazyCoreItems.LAZY_SEEDS))
-                .offerTo(exporter, new Identifier("lazycrops", "harvester"));
+                .input('m', SeedEssenceItems.WEAK_SEED_ESSENCE)
+                .criterion(FabricRecipeProvider.hasItem(SeedEssenceItems.WEAK_SEED_ESSENCE), FabricRecipeProvider.conditionsFromItem(SeedEssenceItems.WEAK_SEED_ESSENCE))
+                .offerTo(exporter, new Identifier("resourcecrops", "harvester"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, LazyBlocks.ESSENCE_EXTRACTOR_ITEM)
                 .pattern("bdb")
@@ -126,9 +126,9 @@ public class RecipeGeneration extends FabricRecipeProvider {
                 .pattern("brb")
                 .input('b', Items.POLISHED_BLACKSTONE_BRICKS)
                 .input('d', Items.DIAMOND)
-                .input('m', LazyCoreItems.LAZIEST_SEEDS)
+                .input('m', SeedEssenceItems.RICH_SEED_ESSENCE)
                 .input('r', Items.REDSTONE)
-                .criterion(FabricRecipeProvider.hasItem(LazyCoreItems.LAZIEST_SEEDS), FabricRecipeProvider.conditionsFromItem(LazyCoreItems.LAZIEST_SEEDS))
-                .offerTo(exporter, new Identifier("lazycrops", "essence_extractor"));
+                .criterion(FabricRecipeProvider.hasItem(SeedEssenceItems.RICH_SEED_ESSENCE), FabricRecipeProvider.conditionsFromItem(SeedEssenceItems.RICH_SEED_ESSENCE))
+                .offerTo(exporter, new Identifier("resourcecrops", "essence_extractor"));
     }
 }

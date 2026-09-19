@@ -36,20 +36,20 @@ for mat in os.listdir("scripts/assets/materials/"):
             stage_img = Image.open(stage_path).convert('RGBA')
             mask = Image.open(stage_path).convert('LA')
             invert(stage_path)
-            Image.composite(material.convert('RGB'), stage_img.convert("RGB"), mask).save(f"src/main/resources/assets/lazycrops/textures/block/" + mat.split(".")[0] + "_crop_" + stage.split("_")[1].split(".")[0] + ".png")
+            Image.composite(material.convert('RGB'), stage_img.convert("RGB"), mask).save(f"src/main/resources/assets/resourcecrops/textures/block/" + mat.split(".")[0] + "_crop_" + stage.split("_")[1].split(".")[0] + ".png")
 
 # Basically, we just remove the pure white pixels from the textures and replace them with transparent pixels.
-for texture in os.listdir("src/main/resources/assets/lazycrops/textures/block/"):
+for texture in os.listdir("src/main/resources/assets/resourcecrops/textures/block/"):
     if texture.endswith(".png"):
         replaced = []
-        for pix in Image.open("src/main/resources/assets/lazycrops/textures/block/" + texture).convert("RGBA").getdata():
+        for pix in Image.open("src/main/resources/assets/resourcecrops/textures/block/" + texture).convert("RGBA").getdata():
             if pix[0] == 0 and pix[1] == 0 and pix[2] == 0 and pix[3] == 255:
                 replaced.append((0, 0, 0, 0))
             else:
                 replaced.append(pix)
-        finish = Image.open("src/main/resources/assets/lazycrops/textures/block/" + texture).convert("RGBA")
+        finish = Image.open("src/main/resources/assets/resourcecrops/textures/block/" + texture).convert("RGBA")
         finish.putdata(replaced)
-        finish.save("src/main/resources/assets/lazycrops/textures/block/" + texture)
+        finish.save("src/main/resources/assets/resourcecrops/textures/block/" + texture)
 
 for mat in os.listdir("scripts/assets/materials/"):
     if mat.endswith(".png"):
@@ -61,13 +61,13 @@ for mat in os.listdir("scripts/assets/materials/"):
         seed_texture = Image.open("scripts/assets/temp/seeds/" + mat).convert("RGBA")
         mask = Image.open("scripts/assets/temp/seeds/" + mat).convert("LA")
         invert("scripts/assets/temp/seeds/" + mat)
-        Image.composite(material_texture.convert('RGB'), seed_texture.convert("RGB"), mask).save(f"src/main/resources/assets/lazycrops/textures/item/" + mat.split(".")[0] + "_seeds.png")
+        Image.composite(material_texture.convert('RGB'), seed_texture.convert("RGB"), mask).save(f"src/main/resources/assets/resourcecrops/textures/item/" + mat.split(".")[0] + "_seeds.png")
         replaced = []
-        for pix in Image.open("src/main/resources/assets/lazycrops/textures/item/" + mat.split(".")[0] + "_seeds.png").convert("RGBA").getdata():
+        for pix in Image.open("src/main/resources/assets/resourcecrops/textures/item/" + mat.split(".")[0] + "_seeds.png").convert("RGBA").getdata():
             if pix[0] == 0 and pix[1] == 0 and pix[2] == 0 and pix[3] == 255:
                 replaced.append((0, 0, 0, 0))
             else:
                 replaced.append(pix)
-        finish = Image.open("src/main/resources/assets/lazycrops/textures/item/" + mat.split(".")[0] + "_seeds.png").convert("RGBA")
+        finish = Image.open("src/main/resources/assets/resourcecrops/textures/item/" + mat.split(".")[0] + "_seeds.png").convert("RGBA")
         finish.putdata(replaced)
-        finish.save("src/main/resources/assets/lazycrops/textures/item/" + mat.split(".")[0] + "_seeds.png")
+        finish.save("src/main/resources/assets/resourcecrops/textures/item/" + mat.split(".")[0] + "_seeds.png")

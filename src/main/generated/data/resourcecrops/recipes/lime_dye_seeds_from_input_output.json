@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:lime_dye_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lime_dye"
+  }
+}

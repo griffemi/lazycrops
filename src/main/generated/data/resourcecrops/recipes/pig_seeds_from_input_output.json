@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:pig_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:porkchop"
+  }
+}

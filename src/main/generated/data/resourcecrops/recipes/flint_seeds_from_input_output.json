@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resourcecrops:flint_seeds"
+    }
+  ],
+  "result": {
+    "item": "minecraft:flint"
+  }
+}
