@@ -68,6 +68,14 @@ public class LazyCrops implements ModInitializer {
 	public static final GameRules.Key<GameRules.BooleanRule> INVINCIBLE_FARMLAND =
 			GameRuleRegistry.register("invincibleFarmland", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
 
+	/**
+	 * When true, sneaking and right-clicking one of our crops grows it one stage, independent of
+	 * bone meal and the {@link #CAN_FERTILIZE_LAZYCROPS} gate. A manual, no-item lever for
+	 * players who don't have (or don't want to rely on) an Origins-style growth power.
+	 */
+	public static final GameRules.Key<GameRules.BooleanRule> GROW_CROPS_ON_SHIFT =
+			GameRuleRegistry.register("growCropsOnShift", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+
 	@Override
 	public void onInitialize() {
 

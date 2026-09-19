@@ -1,5 +1,6 @@
 {
   "block.resourcecrops.tnt_crop": "TNT Crop",
   "item.resourcecrops.tnt_seeds": "TNT Seeds",
-  "gamerule.canFertilizeLazyCrops": "Can lazy crops be fertilized"
+  "gamerule.canFertilizeLazyCrops": "Can lazy crops be fertilized",
+  "gamerule.growCropsOnShift": "Sneak and right-click a lazy crop to grow it a stage"
 }

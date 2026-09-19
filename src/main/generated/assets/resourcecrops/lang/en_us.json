@@ -120,6 +120,7 @@
   "container.resourcecrops.essence_extractor": "Seed Essence Extractor",
   "container.resourcecrops.harvester": "Harvester",
   "gamerule.canFertilizeLazyCrops": "Can lazy crops be fertilized",
+  "gamerule.growCropsOnShift": "Sneak and right-click a lazy crop to grow it a stage",
   "gui.resourcecrops.energy": "%s / %s E",
   "gui.resourcecrops.extract_chance": "Each seed has a 50% chance to yield essence.",
   "gui.resourcecrops.radius": "%sx%s",

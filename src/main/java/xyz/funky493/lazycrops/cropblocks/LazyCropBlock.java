@@ -4,11 +4,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
@@ -91,5 +95,25 @@ public class LazyCropBlock extends CropBlock {
             return;
         }
         super.applyGrowth(world, pos, state);
+    }
+
+    /**
+     * Sneak-right-click grows the crop one stage, gated by the {@code growCropsOnShift}
+     * gamerule (off by default). Independent of {@link LazyCrops#CAN_FERTILIZE_LAZYCROPS}: this
+     * is a manual, no-item lever rather than a form of fertilizing.
+     */
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (!player.isSneaking() || !world.getGameRules().getBoolean(LazyCrops.GROW_CROPS_ON_SHIFT)) {
+            return ActionResult.PASS;
+        }
+        int age = this.getAge(state);
+        if (age >= this.getMaxAge()) {
+            return ActionResult.PASS;
+        }
+        if (!world.isClient) {
+            world.setBlockState(pos, this.withAge(age + 1), Block.NOTIFY_LISTENERS);
+        }
+        return ActionResult.SUCCESS;
     }
 }

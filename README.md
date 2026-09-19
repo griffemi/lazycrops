@@ -76,6 +76,19 @@ convert silently and immediately wherever they're touched, with no server downti
 edits to region files, but a chunk nobody visits keeps its old ids (harmless) until someone does.
 Advancement progress and stats keyed by the old ids are not migrated and will reset.
 
+### Origins compatibility
+
+Every crop block is tagged `#minecraft:crops` and `#c:crops` (`BlockTagGeneration`). Growth/
+harvest powers in the Origins ecosystem -- the `Origins: Classes` Farmer class (doubled bone
+meal, 2x harvest yield) and Moth Fae's Verdant Touch -- target blocks by tag rather than by
+Java type, so an untagged crop is invisible to them even though `LazyCropBlock` already extends
+vanilla `CropBlock` and correctly implements `Fertilizable`. No Origins/Apoli dependency is
+needed for this: tagging is the actual fix, not a mod-specific integration.
+
+`growCropsOnShift` gamerule (off by default): sneaking and right-clicking a crop grows it one
+stage, independent of bone meal and the `canFertilizeLazyCrops` gate -- a manual, no-item lever
+for servers that don't run one of the above.
+
 ### Build
 
     ./gradlew build        # -> build/libs/resourcecrops-<version>.jar
